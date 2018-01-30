@@ -7,7 +7,7 @@ using TFR.Data.Models;
 
 namespace TFR.ViewModels
 {
-    interface ILandingPageViewModel
+    public interface ILandingPageViewModel
     {
         IEnumerable<IStation> Stations { get; set; }
     }

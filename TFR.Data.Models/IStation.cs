@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace TFR.Data.Models
 {
-    public class Search
+    interface IStation
     {
+        string Id { get; set; }
+        string Station { get; set; }
     }
 }

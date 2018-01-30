@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TFR.Data.Models
 {
-    interface IStation
+    public interface IStation
     {
         string Id { get; set; }
         string Station { get; set; }

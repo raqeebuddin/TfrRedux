@@ -15,9 +15,10 @@ namespace TFR.Controllers
         {
             _landingPageViewModel = landingPageViewModel;
         }
+
         public ActionResult Index()
         {
-            return View();
+            return View(_landingPageViewModel);
         }
     }
 }

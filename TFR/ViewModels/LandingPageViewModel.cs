@@ -8,6 +8,6 @@ namespace TFR.ViewModels
 {
     public class LandingPageViewModel : ILandingPageViewModel
     {
-        public IEnumerable<IArrivalDepartureStation> Stations { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public List<IArrivalDepartureStation> Stations { get; set; }
     }
 }

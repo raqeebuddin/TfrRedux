@@ -7,7 +7,7 @@ using TFR.Data.Models.Interfaces;
 
 namespace TFR.Data.Models.Stations
 {
-    class ArrivalDepartureStation : IArrivalDepartureStation
+    public class ArrivalDepartureStation : IArrivalDepartureStation
     {
         public int DepartureId { get; set; }
         public string DepartureStation { get; set; }

@@ -10,6 +10,9 @@ namespace TFR.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using TFR.Data.Models.Interfaces;
+    using TFR.Data.Models.Stations;
+    using TFR.ViewModels;
 
     public static class NinjectWebCommon 
     {
@@ -44,7 +47,8 @@ namespace TFR.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-
+                kernel.Bind<IArrivalDepartureStation>().To<ArrivalDepartureStation>();
+                kernel.Bind<ILandingPageViewModel>().To<LandingPageViewModel>();
                 RegisterServices(kernel);
                 return kernel;
             }

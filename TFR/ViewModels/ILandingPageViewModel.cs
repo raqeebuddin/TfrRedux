@@ -9,6 +9,6 @@ namespace TFR.ViewModels
 {
     public interface ILandingPageViewModel
     {
-        IEnumerable<IArrivalDepartureStation> Stations { get; set; }
+        List<IArrivalDepartureStation> Stations { get; set; }
     }
 }

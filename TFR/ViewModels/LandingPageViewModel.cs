@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using TFR.Data.Models;
-
+﻿using TFR.Data.Models.Stations;
 
 namespace TFR.ViewModels
 {
     public class LandingPageViewModel : ILandingPageViewModel
     {
-        public IStation DepartureStation { get; set; }
-        public IStation ArrivalStation { get; set; }
+        public Station DepartureStation { get; set; }
+        public Station ArrivalStation { get; set; }
     }
 }

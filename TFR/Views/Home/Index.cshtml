@@ -10,18 +10,23 @@
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-
+    
 <div class="form-horizontal">
     <h4>LandingPageViewModel</h4>
     <hr />
-
-   
-        @Html.DisplayFor(modelItem => Model)
-
-
-
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
+    <div class="form-group">
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.DepartureStation.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Departure Station" } })
+            @Html.ValidationMessageFor(model => model.DepartureStation.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.ArrivalStation.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Arrival Station" } })
+            @Html.ValidationMessageFor(model => model.ArrivalStation.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Create" class="btn btn-default" />

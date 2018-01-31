@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TFR.Data.Models.Interfaces;
+using TFR.Data.Models;
 
 namespace TFR.ViewModels
 {
     public interface ILandingPageViewModel
     {
-        List<IArrivalDepartureStation> Stations { get; set; }
+        IStation DepartureStation { get; set; }
+        IStation ArrivalStation { get; set; }
     }
 }

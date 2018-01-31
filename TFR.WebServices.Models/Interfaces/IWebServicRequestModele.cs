@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TFR.WebServices.Models.Interfaces
 {
-    public interface IWebServicRequestModele
+    public interface IWebServiceResponseModel
     {
         string Query { get; set; }
         int From { get; set; }

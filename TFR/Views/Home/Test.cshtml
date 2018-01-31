@@ -1,0 +1,74 @@
+﻿@model TFR.WebServices.Models.Responses.WebServiceResponseModel
+
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test</h2>
+
+<div>
+    <h4>WebServiceResponseModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Query)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Query)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.From)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.From)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Page)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Page)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PageSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Provider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Provider)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxScore)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

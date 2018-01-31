@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,10 +55,13 @@
       <Project>{916F00C3-A1E8-42AC-97B0-4CD0D5626D1D}</Project>
       <Name>TFR.Data.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TFR\TFR.Website.csproj">
-      <Project>{FF4F8BE4-38AB-4692-ABA6-4E76DC6E371F}</Project>
-      <Name>TFR.Website</Name>
+    <ProjectReference Include="..\TFR.WebServices.Models\TFR.WebServices.Models.csproj">
+      <Project>{AEE66D4C-5291-4DD3-B482-EA5F5A43C79F}</Project>
+      <Name>TFR.WebServices.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

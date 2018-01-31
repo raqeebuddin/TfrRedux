@@ -4,7 +4,7 @@ namespace TFR.WebServices.Models.Interfaces
 {
     public interface IWebService
     {
-        void GetStation(IStation station);
+        IWebServiceResponseModel GetStation(IStation station);
         void GetJourneyList(IStation departure, IStation arrival);
     }
 }

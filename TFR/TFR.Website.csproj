@@ -201,6 +201,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -222,6 +223,14 @@
     <ProjectReference Include="..\TFR.Data.Models\TFR.Data.Models.csproj">
       <Project>{916f00c3-a1e8-42ac-97b0-4cd0d5626d1d}</Project>
       <Name>TFR.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TFR.Services.Data\TFR.Services.Data.csproj">
+      <Project>{4ffddc60-c28c-4a8a-842e-042557ce4619}</Project>
+      <Name>TFR.Services.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TFR.Services.WebService\TFR.Services.WebService.csproj">
+      <Project>{27aca838-bda4-4f00-90ea-5dce8e09749b}</Project>
+      <Name>TFR.Services.WebService</Name>
     </ProjectReference>
     <ProjectReference Include="..\TFR.WebServices.Models\TFR.WebServices.Models.csproj">
       <Project>{AEE66D4C-5291-4DD3-B482-EA5F5A43C79F}</Project>

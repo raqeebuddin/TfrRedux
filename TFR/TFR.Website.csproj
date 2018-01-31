@@ -223,6 +223,10 @@
       <Project>{916f00c3-a1e8-42ac-97b0-4cd0d5626d1d}</Project>
       <Name>TFR.Data.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TFR.WebServices.Models\TFR.WebServices.Models.csproj">
+      <Project>{AEE66D4C-5291-4DD3-B482-EA5F5A43C79F}</Project>
+      <Name>TFR.WebServices.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

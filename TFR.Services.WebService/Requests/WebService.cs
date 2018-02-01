@@ -34,7 +34,6 @@ namespace TFR.WebServices.Models.Requests
             {
                 var json = client.DownloadString(_uri);
                 var  data = JsonConvert.DeserializeObject<WebServiceResponseModel>(json);
-               
 
                 return data;
             }

@@ -8,11 +8,11 @@ namespace TFR.Data.Models
 {
     public interface IStation
     {
-        int Id { get; set; }
-        string NaptanId { get; set; }
-        string IcsId { get; set; }
+        //int Id { get; set; }
+        //string NaptanId { get; set; }
+        //string IcsId { get; set; }
         string Name { get; set; }
-        string Fare { get; set; }
-        Nullable<int> CaloriesBurned { get; set; }
+        //string Fare { get; set; }
+        //Nullable<int> CaloriesBurned { get; set; }
     }
 }

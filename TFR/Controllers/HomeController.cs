@@ -13,10 +13,12 @@ namespace TFR.Controllers
     public class HomeController : Controller
     {
         private ILandingPageViewModel _landingPageViewModel;
-        public IWebService _webService;
+        private IWebService _webService;
+        
         public HomeController(
             ILandingPageViewModel landingPageViewModel,
-            IWebService webService)
+            IWebService webService
+            )
         {
             _landingPageViewModel = landingPageViewModel;
             _webService = webService;

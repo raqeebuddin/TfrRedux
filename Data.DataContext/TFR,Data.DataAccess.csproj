@@ -30,8 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,8 +49,69 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MSreplication_options.cs">
+      <DependentUpon>PersistentDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersistentDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersistentDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersistentDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersistentDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersistentDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersistentDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="spt_fallback_db.cs">
+      <DependentUpon>PersistentDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spt_fallback_dev.cs">
+      <DependentUpon>PersistentDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spt_fallback_usg.cs">
+      <DependentUpon>PersistentDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spt_monitor.cs">
+      <DependentUpon>PersistentDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spt_values.cs">
+      <DependentUpon>PersistentDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="TFRDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="PersistentDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PersistentDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="PersistentDb.edmx.diagram">
+      <DependentUpon>PersistentDb.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PersistentDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PersistentDb.Context.cs</LastGenOutput>
+      <DependentUpon>PersistentDb.edmx</DependentUpon>
+    </Content>
+    <Content Include="PersistentDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PersistentDb.edmx</DependentUpon>
+      <LastGenOutput>PersistentDb.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

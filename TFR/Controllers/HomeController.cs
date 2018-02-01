@@ -31,9 +31,9 @@ namespace TFR.Controllers
         [HttpPost]
         public ActionResult Index(LandingPageViewModel landingPageViewModel)
         {
-            var model  = _webService.GetStation(landingPageViewModel.ArrivalStation);
+            var arrivalStation  = _webService.GetStation(landingPageViewModel.ArrivalStation);
             //_webService.GetStation(landingPageViewModel.DepartureStation);
-            return RedirectToAction("Test", model);
+            return RedirectToAction("Test", arrivalStation);
         }
 
         [HttpGet]

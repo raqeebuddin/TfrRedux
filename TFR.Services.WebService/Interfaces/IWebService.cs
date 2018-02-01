@@ -2,11 +2,11 @@
 using TFR.Data.Models.Stations;
 using TFR.WebServices.Models.Responses;
 
-namespace TFR.WebServices.Models.Interfaces
+namespace TFR.Services.WebService.Interfaces
 {
     public interface IWebService
     {
-        WebServiceResponseModel GetStation(Station station);
+        WebServiceResponseModel GetStation(IStation station);
         void GetJourneyList(IStation departure, IStation arrival);
     }
 }

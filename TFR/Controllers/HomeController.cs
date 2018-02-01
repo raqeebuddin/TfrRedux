@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Services;
+using TFR.Services.WebService.Interfaces;
 using TFR.ViewModels;
-using TFR.WebServices.Models.Interfaces;
 using TFR.WebServices.Models.Responses;
 
 namespace TFR.Controllers

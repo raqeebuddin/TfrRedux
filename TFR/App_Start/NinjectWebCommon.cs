@@ -3,18 +3,16 @@
 
 namespace TFR.App_Start
 {
-    using System;
-    using System.Web;
-
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
     using Ninject;
     using Ninject.Web.Common;
+    using System;
+    using System.Web;
     using TFR.Data.Models;
     using TFR.Data.Models.Stations;
+    using TFR.Services.WebService.Interfaces;
+    using TFR.Services.WebService.Requests;
     using TFR.ViewModels;
-    using TFR.WebServices.Models.Interfaces;
-    using TFR.WebServices.Models.Requests;
 
     public static class NinjectWebCommon 
     {

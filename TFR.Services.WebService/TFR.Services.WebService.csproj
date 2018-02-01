@@ -53,10 +53,6 @@
     <Folder Include="Responses\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TFR.Data.Models\TFR.Data.Models.csproj">
-      <Project>{916F00C3-A1E8-42AC-97B0-4CD0D5626D1D}</Project>
-      <Name>TFR.Data.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TFR.WebServices.Models\TFR.WebServices.Models.csproj">
       <Project>{AEE66D4C-5291-4DD3-B482-EA5F5A43C79F}</Project>
       <Name>TFR.WebServices.Models</Name>

@@ -47,11 +47,5 @@
   <ItemGroup>
     <Folder Include="Requests\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TFR.Data.Models\TFR.Data.Models.csproj">
-      <Project>{916F00C3-A1E8-42AC-97B0-4CD0D5626D1D}</Project>
-      <Name>TFR.Data.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

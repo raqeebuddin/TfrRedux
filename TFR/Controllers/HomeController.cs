@@ -14,9 +14,12 @@ namespace TFR.Controllers
     {
         private ILandingPageViewModel _landingPageViewModel;
         public IWebService _webService;
-        public HomeController(ILandingPageViewModel landingPageViewModel)
+        public HomeController(
+            ILandingPageViewModel landingPageViewModel,
+            IWebService webService)
         {
             _landingPageViewModel = landingPageViewModel;
+            _webService = webService;
         }
 
         [HttpGet]
@@ -31,11 +34,11 @@ namespace TFR.Controllers
             //var station = landingPageViewModel.ArrivalStation; 
             var model  = _webService.GetStation(landingPageViewModel.ArrivalStation);
             //_webService.GetStation(landingPageViewModel.DepartureStation);
-            return RedirectToRoute("Test", model);
+            return RedirectToAction("Test", model);
         }
 
         [HttpGet]
-        public ActionResult Test(WebService model)
+        public ActionResult Test(WebServiceResponseModel model)
         {
             return View(model);
         }

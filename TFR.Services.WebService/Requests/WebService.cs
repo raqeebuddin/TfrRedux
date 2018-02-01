@@ -13,17 +13,7 @@ namespace TFR.WebServices.Models.Requests
 
         public void GetJourneyList(IStation departure, IStation arrival)
         {
-            //var journey = String.Format(
-            //   $"https://api.tfl.gov.uk/journey/journeyresults/{departure.Name}/to/{arrStation}?&mode=tube");
-
-            //using (WebClient client = new WebClient())
-            //{
-            //    var json = client.DownloadString(JourneyCall);
-            //    ItineraryResult data = JsonConvert.DeserializeObject<TrainFoldRide.Models.ItineraryResult>(json);
-
-            //    Debug.WriteLine("The duration of this journey is: " + data.Journeys[0].Duration + " minutes");
-            //    return data.Journeys[0];
-            //}
+          
         }
 
         public WebServiceResponseModel GetStation(Station station)

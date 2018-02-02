@@ -51,6 +51,8 @@ namespace TfrRedo.App_Start
                 kernel.Bind<IStationFinder>().To<StationFinder>();
                 kernel.Bind<IIndexPageViewModel>().To<IndexPageViewModel>();
                 kernel.Bind<iWebApiStationFinder>().To<WebApiStationFinder>();
+                kernel.Bind <IStationFinderResultPageViewModel>().To<StationFinderResultPageViewModel>();
+
 
                 RegisterServices(kernel);
                 return kernel;

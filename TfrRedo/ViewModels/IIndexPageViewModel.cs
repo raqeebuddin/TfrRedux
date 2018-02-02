@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TfrRedo.Services.SearchStations.Queries.GetStationDetails
+namespace TfrRedo.ViewModels
 {
-    public interface IGetStationDetails
+    interface IIndexPageViewModel
     {
-        StationDetailModel Get(Station station);
+        Station Arrival { get; set; }
     }
 }

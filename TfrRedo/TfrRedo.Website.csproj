@@ -148,6 +148,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\IIndexPageViewModel.cs" />
+    <Compile Include="ViewModels\IndexPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -189,7 +191,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -203,6 +204,16 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\TfrRedo.Domain.csproj">
+      <Project>{B66FD1AD-D452-4C9E-A6EA-9FD87FF7C65A}</Project>
+      <Name>TfrRedo.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TfrRedo.Services\TfrRedo.Services.csproj">
+      <Project>{50B84DFE-EA5C-4F17-8689-029DFE6D8296}</Project>
+      <Name>TfrRedo.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

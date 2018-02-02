@@ -11,12 +11,12 @@ using TfrRedo.Services.SearchStations.Queries.JourneyFinder;
 
 namespace TfrRedo.WebApi.Queries
 {
-    class WebApiJourneyFinder : iWebApiJourneyFinder
+    public class WebApiJourneyFinder : iWebApiJourneyFinder
     {
         public JourneyFinderResponseModel JourneyFinder(Station station)
         {
             var journeyCall = String.Format(
-              $"https://api.tfl.gov.uk/journey/journeyresults/{station.Name}/to/{station.Name}?&mode=tube");
+              $"https://api.tfl.gov.uk/journey/journeyresults/{station.IcsId}/to/{station.Name}?&mode=tube");
 
             using (WebClient client = new WebClient())
             {

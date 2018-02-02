@@ -43,12 +43,12 @@
     <Compile Include="Interfaces\iWebApiJourneyFinder.cs" />
     <Compile Include="Interfaces\IWebApiStationfinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchStations\Queries\JourneyFinder\IJourneyfinder.cs" />
-    <Compile Include="SearchStations\Queries\JourneyFinder\JourneyFinder.cs" />
-    <Compile Include="SearchStations\Queries\JourneyFinder\JourneyFinderResponseModel.cs" />
-    <Compile Include="SearchStations\Queries\SattionFinder\StationFinder.cs" />
-    <Compile Include="SearchStations\Queries\SattionFinder\IStationFinder.cs" />
-    <Compile Include="SearchStations\Queries\SattionFinder\StationFinderResponseModel.cs" />
+    <Compile Include="Queries\JourneyFinder\IJourneyfinder.cs" />
+    <Compile Include="Queries\JourneyFinder\JourneyFinder.cs" />
+    <Compile Include="Queries\JourneyFinder\JourneyFinderResponseModel.cs" />
+    <Compile Include="Queries\SattionFinder\StationFinder.cs" />
+    <Compile Include="Queries\SattionFinder\IStationFinder.cs" />
+    <Compile Include="Queries\SattionFinder\StationFinderResponseModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\TfrRedo.Domain.csproj">

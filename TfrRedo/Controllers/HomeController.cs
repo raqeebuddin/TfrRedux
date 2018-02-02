@@ -11,8 +11,8 @@ namespace TfrRedo.Controllers
     public class HomeController : Controller
     {
         IIndexPageViewModel _indexPageViewModel;
-        IGetStationDetails _getStationDetails;
-        public HomeController(IIndexPageViewModel indexPageViewModel, IGetStationDetails getStationDetails)
+        IStationFinder _getStationDetails;
+        public HomeController(IIndexPageViewModel indexPageViewModel, IStationFinder getStationDetails)
         {
             _indexPageViewModel = indexPageViewModel;
             _getStationDetails = getStationDetails;

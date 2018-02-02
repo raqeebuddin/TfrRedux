@@ -8,17 +8,17 @@ using TfrRedo.Services.Interfaces;
 
 namespace TfrRedo.Services.SearchStations.Queries.GetStationDetails
 {
-    public class GetStationDetails
-        : IGetStationDetails
+    public class StationFinder
+        : IStationFinder
     {
         private readonly iWebApiStationFinder _webApiStationFinder;
 
-        public GetStationDetails(iWebApiStationFinder webApiStationFinder)
+        public StationFinder(iWebApiStationFinder webApiStationFinder)
         {
             _webApiStationFinder = webApiStationFinder;
         }
 
-        public StationDetailModel Get(Station station)
+        public StationFinderResponseModel Get(Station station)
         {
             var stationDetails = _webApiStationFinder.GetStationDetails(station);
 

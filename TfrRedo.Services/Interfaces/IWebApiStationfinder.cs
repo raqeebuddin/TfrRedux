@@ -10,6 +10,6 @@ namespace TfrRedo.Services.Interfaces
 {
     public interface iWebApiStationFinder
     {
-        StationDetailModel GetStationDetails(Station statiion);
+        StationFinderResponseModel GetStationDetails(Station statiion);
     }
 }

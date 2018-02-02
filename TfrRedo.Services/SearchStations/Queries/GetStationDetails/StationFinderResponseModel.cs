@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TfrRedo.Services.SearchStations.Queries.GetStationDetails
 {
-    public class StationDetailModel
+    public class StationFinderResponseModel
     {
         public string Query { get; set; }
         public int From { get; set; }
@@ -15,7 +15,7 @@ namespace TfrRedo.Services.SearchStations.Queries.GetStationDetails
         public int PageSize { get; set; }
         public string Provider { get; set; }
         public int Total { get; set; }
-        public IEnumerable<Station> Matches { get; set; }
+        public IList<Station> Matches { get; set; }
         public double? MaxScore { get; set; }
     }
 }

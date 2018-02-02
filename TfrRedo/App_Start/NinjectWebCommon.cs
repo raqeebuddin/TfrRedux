@@ -48,7 +48,7 @@ namespace TfrRedo.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-                kernel.Bind<IGetStationDetails>().To<GetStationDetails>();
+                kernel.Bind<IStationFinder>().To<StationFinder>();
                 kernel.Bind<IIndexPageViewModel>().To<IndexPageViewModel>();
                 kernel.Bind<iWebApiStationFinder>().To<WebApiStationFinder>();
 

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace TfrRedo.Services.SearchStations.Queries.GetStationDetails
 {
-    public interface IGetStationDetails
+    public interface IStationFinder
     {
-        StationDetailModel Get(Station station);
+        StationFinderResponseModel Get(Station station);
     }
 }

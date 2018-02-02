@@ -9,8 +9,11 @@ namespace Domain.Stations
 {
     public class Station : IEntity
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
-
+        public string IcsId { get; set; }
+        public string Url { get; set; }
+        public double? Lat { get; set; }
+        public double? Lon { get; set; }
     }
 }

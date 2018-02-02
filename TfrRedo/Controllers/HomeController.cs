@@ -17,9 +17,16 @@ namespace TfrRedo.Controllers
             _indexPageViewModel = indexPageViewModel;
             _getStationDetails = getStationDetails;
         }
+        [HttpGet]
         public ActionResult Index()
         {
             return View(_indexPageViewModel);
+        }
+        [HttpPost]
+        public ActionResult Index(IndexPageViewModel indexPageViewModel)
+        {
+           var stationDetails = _getStationDetails.Get(indexPageViewModel.Arrival);
+           return View();
         }
 
         public ActionResult About()

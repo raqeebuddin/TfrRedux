@@ -10,6 +10,8 @@ namespace TfrRedo.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using TfrRedo.Services.SearchStations.Queries.GetStationDetails;
+    using TfrRedo.ViewModels;
 
     public static class NinjectWebCommon 
     {
@@ -44,6 +46,8 @@ namespace TfrRedo.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+                kernel.Bind<IGetStationDetails>().To<GetStationDetails>();
+                kernel.Bind<IIndexPageViewModel>().To<IIndexPageViewModel>();
 
                 RegisterServices(kernel);
                 return kernel;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Stations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -44,10 +45,10 @@ namespace TfrRedo.Controllers
         }
 
         [HttpPost]
-        public ActionResult JourneyPlanner (StationFinder station)
+        public ActionResult JourneyPlanner (Station station)
         {
             var journeyDetails =  _journeyFinder.Get(station);
-            _journeyDetailsPageViewModel = journeyDetails;
+            _journeyDetailsPageViewModel.Journey = journeyDetails;
 
             return View(_journeyDetailsPageViewModel);
         }

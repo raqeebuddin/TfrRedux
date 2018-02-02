@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Stations;
+using TFR.Data.Models.Journey;
 using TfrRedo.Services.Interfaces;
 
 namespace TfrRedo.Services.SearchStations.Queries.JourneyFinder
@@ -17,10 +18,10 @@ namespace TfrRedo.Services.SearchStations.Queries.JourneyFinder
             _webApiJourneyFinder = webApiJourneyFinder;
         }
 
-        public JourneyFinderResponseModel Get(Station station)
+        public Journey Get(Station station)
         {
             var journeyDetails = _webApiJourneyFinder.JourneyFinder(station);
-            return journeyDetails;
+            return journeyDetails.Journeys[0];
         }
     }
 }

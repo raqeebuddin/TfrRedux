@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TfrRedo.Services.SearchStations.Queries.GetStationDetails
+namespace TfrRedo.Services.SearchStations.Queries.stationFinder
 {
     public interface IStationFinder
     {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Domain.Stations;
 using TfrRedo.Services.Interfaces;
 
-namespace TfrRedo.Services.SearchStations.Queries.GetStationDetails
+namespace TfrRedo.Services.SearchStations.Queries.stationFinder
 {
     public class StationFinder
         : IStationFinder
@@ -20,7 +20,7 @@ namespace TfrRedo.Services.SearchStations.Queries.GetStationDetails
 
         public StationFinderResponseModel Get(Station station)
         {
-            var stationDetails = _webApiStationFinder.GetStationDetails(station);
+            var stationDetails = _webApiStationFinder.stationFinder(station);
 
             return stationDetails;
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TfrRedo.Services.SearchStations.Queries.GetStationDetails;
+using TfrRedo.Services.SearchStations.Queries.stationFinder;
 using TfrRedo.ViewModels;
 
 namespace TfrRedo.Controllers
@@ -11,11 +11,11 @@ namespace TfrRedo.Controllers
     public class HomeController : Controller
     {
         IIndexPageViewModel _indexPageViewModel;
-        IStationFinder _getStationDetails;
-        public HomeController(IIndexPageViewModel indexPageViewModel, IStationFinder getStationDetails)
+        IStationFinder _stationFinder;
+        public HomeController(IIndexPageViewModel indexPageViewModel, IStationFinder stationFinder)
         {
             _indexPageViewModel = indexPageViewModel;
-            _getStationDetails = getStationDetails;
+            _stationFinder = stationFinder;
         }
         [HttpGet]
         public ActionResult Index()
@@ -25,7 +25,7 @@ namespace TfrRedo.Controllers
         [HttpPost]
         public ActionResult Index(IndexPageViewModel indexPageViewModel)
         {
-           var stationDetails = _getStationDetails.Get(indexPageViewModel.Arrival);
+           var stationDetails = _stationFinder.Get(indexPageViewModel.Arrival);
            return View();
         }
 

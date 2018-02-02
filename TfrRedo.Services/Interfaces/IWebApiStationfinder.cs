@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TfrRedo.Services.SearchStations.Queries.GetStationDetails;
+using TfrRedo.Services.SearchStations.Queries.stationFinder;
 
 namespace TfrRedo.Services.Interfaces
 {
     public interface iWebApiStationFinder
     {
-        StationFinderResponseModel GetStationDetails(Station statiion);
+        StationFinderResponseModel stationFinder(Station statiion);
     }
 }

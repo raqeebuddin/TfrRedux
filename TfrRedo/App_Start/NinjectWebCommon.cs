@@ -11,7 +11,7 @@ namespace TfrRedo.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using TfrRedo.Services.Interfaces;
-    using TfrRedo.Services.SearchStations.Queries.GetStationDetails;
+    using TfrRedo.Services.SearchStations.Queries.stationFinder;
     using TfrRedo.ViewModels;
     using TfrRedo.WebApi.Queries;
 

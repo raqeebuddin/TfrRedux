@@ -34,7 +34,7 @@ namespace TfrRedo.Controllers
             var stationFinder = _stationFinder.Get(indexPageViewModel.Arrival);
             _stationFinderResultPageViewModel.Stations = stationFinder.Matches;
 
-           return View("SationFinderResultPage", _stationFinderResultPageViewModel);
+           return View("StationFinderResultPage", _stationFinderResultPageViewModel);
         }
 
     }

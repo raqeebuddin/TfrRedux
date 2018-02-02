@@ -17,7 +17,7 @@
 
     <div class="form-group">
         <div class="col-md-8">
-            @Html.EditorFor(model => model.Arrival.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Departure Station" } })
+            @Html.EditorFor(model => model.Arrival.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Station" } })
             @Html.ValidationMessageFor(model => model.Arrival.Name, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -25,7 +25,7 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="submit" value="Search" class="btn btn-default" />
         </div>
     </div>
 </div>

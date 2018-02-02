@@ -12,10 +12,11 @@ namespace TfrRedo.Services.SearchStations.Queries.stationFinder
         : IStationFinder
     {
         private readonly iWebApiStationFinder _webApiStationFinder;
-
-        public StationFinder(iWebApiStationFinder webApiStationFinder)
+        public StationFinder(
+            iWebApiStationFinder webApiStationFinder)
         {
             _webApiStationFinder = webApiStationFinder;
+
         }
 
         public StationFinderResponseModel Get(Station station)

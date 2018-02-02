@@ -10,12 +10,18 @@ namespace TfrRedo.Controllers
 {
     public class HomeController : Controller
     {
-        IIndexPageViewModel _indexPageViewModel;
-        IStationFinder _stationFinder;
-        public HomeController(IIndexPageViewModel indexPageViewModel, IStationFinder stationFinder)
+        private readonly IIndexPageViewModel _indexPageViewModel;
+        private readonly IStationFinder _stationFinder;
+        private  IStationFinderResultPageViewModel _stationFinderResultPageViewModel;
+        public HomeController(
+            IIndexPageViewModel indexPageViewModel, 
+            IStationFinder stationFinder,
+            IStationFinderResultPageViewModel stationFinderResultPageViewModel
+            )
         {
             _indexPageViewModel = indexPageViewModel;
             _stationFinder = stationFinder;
+            _stationFinderResultPageViewModel = stationFinderResultPageViewModel;
         }
         [HttpGet]
         public ActionResult Index()
@@ -25,8 +31,10 @@ namespace TfrRedo.Controllers
         [HttpPost]
         public ActionResult Index(IndexPageViewModel indexPageViewModel)
         {
-           var stationDetails = _stationFinder.Get(indexPageViewModel.Arrival);
-           return View();
+            var stationFinder = _stationFinder.Get(indexPageViewModel.Arrival);
+            _stationFinderResultPageViewModel.Stations = stationFinder.Matches;
+
+           return View(_stationFinderResultPageViewModel);
         }
 
         public ActionResult About()

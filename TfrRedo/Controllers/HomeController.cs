@@ -12,7 +12,7 @@ namespace TfrRedo.Controllers
     {
         IIndexPageViewModel _indexPageViewModel;
         IGetStationDetails _getStationDetails;
-        HomeController(IIndexPageViewModel indexPageViewModel, IGetStationDetails getStationDetails)
+        public HomeController(IIndexPageViewModel indexPageViewModel, IGetStationDetails getStationDetails)
         {
             _indexPageViewModel = indexPageViewModel;
             _getStationDetails = getStationDetails;

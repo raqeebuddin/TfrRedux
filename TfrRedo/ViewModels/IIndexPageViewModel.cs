@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TfrRedo.ViewModels
 {
-    interface IIndexPageViewModel
+    public interface IIndexPageViewModel
     {
         Station Arrival { get; set; }
     }

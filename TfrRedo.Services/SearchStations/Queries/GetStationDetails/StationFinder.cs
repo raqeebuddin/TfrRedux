@@ -21,7 +21,6 @@ namespace TfrRedo.Services.SearchStations.Queries.stationFinder
         public StationFinderResponseModel Get(Station station)
         {
             var stationDetails = _webApiStationFinder.stationFinder(station);
-
             return stationDetails;
         }
     }

@@ -11,7 +11,6 @@ namespace TfrRedo.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using TfrRedo.Services.Interfaces;
-    using TfrRedo.Services.SearchStations.Queries.JourneyFinder;
     using TfrRedo.Services.SearchStations.Queries.stationFinder;
     using TfrRedo.ViewModels;
     using TfrRedo.WebApi.Queries;
@@ -53,11 +52,6 @@ namespace TfrRedo.App_Start
                 kernel.Bind<IIndexPageViewModel>().To<IndexPageViewModel>();
                 kernel.Bind<iWebApiStationFinder>().To<WebApiStationFinder>();
                 kernel.Bind <IStationFinderResultPageViewModel>().To<StationFinderResultPageViewModel>();
-                kernel.Bind<IJourneyDetailsPageViewModel>().To<JourneyDetailsPageViewModel>();
-                kernel.Bind<IJourneyfinder>().To<JourneyFinder>();
-                kernel.Bind<iWebApiJourneyFinder>().To<WebApiJourneyFinder>();
-      
-
 
 
                 RegisterServices(kernel);

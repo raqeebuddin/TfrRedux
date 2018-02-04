@@ -5,20 +5,33 @@
 }
 
 <h2>StationFinderResultPage</h2>
-<table class="table">
-    <tr>
-        <th></th>
-    </tr>
 
-@foreach (var station in Model.Stations) {
-    <tr>
-        <td>@station.Name</td>
-        <td>
-            
-            @Html.ActionLink("Select Station", "JourneyPlanner", new { station = station }) 
-     
-        </td>
-    </tr>
+
+@using (Html.BeginForm("JourneyPlanner", "Home")) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>StationFinderResultPageViewModel</h4>
+    <hr />
+    @for (int i = 0; i < Model.Stations.Count; i++)
+    {
+        @Html.DisplayFor(m => m.Stations[i].Name);
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    }
+
+</div>
 }
 
-</table>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

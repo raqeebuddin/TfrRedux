@@ -209,8 +209,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\JourneyPlanner.cshtml" />
     <Content Include="Views\Home\StationFinderResultPage.cshtml" />
+    <Content Include="Views\Home\JourneyPlanner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

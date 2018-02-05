@@ -9,10 +9,13 @@
 <div>
     <h4>JourneyDetailsPageViewModel</h4>
     <hr />
-    <dl class="dl-horizontal">
-    </dl>
-    @Model.Journey.
+    <dl class="dl-horizontal"></dl>
 </div>
+
+@Model.Journey.ArrivalDateTime
+@Model.Journey.Duration
+@Model.Journey.LegsTrain
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")

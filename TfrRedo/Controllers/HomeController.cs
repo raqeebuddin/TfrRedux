@@ -51,7 +51,7 @@ namespace TfrRedo.Controllers
             var journeyDetails = _journeyFinder.Get(stations.SelectedStationIcsId);
             _journeyDetailsPageViewModel.Journey = journeyDetails;
 
-            return View(_journeyDetailsPageViewModel);
+            return View("JourneyPlanner", _journeyDetailsPageViewModel);
         }
 
         [HttpPost]

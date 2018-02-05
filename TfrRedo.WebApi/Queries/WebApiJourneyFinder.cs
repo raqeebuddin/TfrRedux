@@ -13,7 +13,7 @@ namespace TfrRedo.WebApi.Queries
 {
     public class WebApiJourneyFinder : iWebApiJourneyFinder
     {
-        public JourneyFinderResponseModel JourneyFinder(string stationIcsId)
+        public  JourneyFinderResponseModel JourneyFinder(string stationIcsId)
         {
             var journeyCall = String.Format(
               $"https://api.tfl.gov.uk/journey/journeyresults/{stationIcsId}/to/1000013?&mode=tube");
@@ -22,7 +22,6 @@ namespace TfrRedo.WebApi.Queries
             {
                 var json = client.DownloadString(journeyCall);
                 var journeys = Newtonsoft.Json.JsonConvert.DeserializeObject<JourneyFinderResponseModel>(json);
-
 
                 return journeys;
             }

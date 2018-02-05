@@ -50,6 +50,7 @@ namespace TfrRedo.Controllers
         {
             var journeyDetails = _journeyFinder.Get(stations.SelectedStationIcsId);
             _journeyDetailsPageViewModel.Journey = journeyDetails;
+            _journeyDetailsPageViewModel.Journey.LegsTrain = journeyDetails.Legs;
 
             return View("JourneyPlanner", _journeyDetailsPageViewModel);
         }

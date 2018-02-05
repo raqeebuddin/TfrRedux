@@ -12,9 +12,19 @@
     <dl class="dl-horizontal"></dl>
 </div>
 
-@Model.Journey.ArrivalDateTime
-@Model.Journey.Duration
-@Model.Journey.LegsTrain
+<div>
+    <p>Arrival Time: </p>@Model.Journey.ArrivalDateTime
+</div>
+<div>
+    <p>Journey Duration</p>@Model.Journey.Duration
+</div>
+<div>
+    <p>Distance to Travel (km)</p>@Model.Journey.LegsTrain[0].Distance
+</div>
+<div>
+    <p>Travel Instructions</p>
+    @Model.Journey.LegsTrain[0].Instruction.Summary
+</div>
 
 <p>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |

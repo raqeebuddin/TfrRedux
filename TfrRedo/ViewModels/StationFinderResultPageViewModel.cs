@@ -11,9 +11,9 @@ namespace TfrRedo.ViewModels
     {
         public IList<Station> Stations { get; set; }
 
-        public string SelectedFlavorId { get; set; }
+        public string SelectedStationIcsId { get; set; }
 
-        public IEnumerable<SelectListItem> FlavorItems
+        public IEnumerable<SelectListItem> StationItems
         {
             get { return new SelectList(Stations, "IcsId", "Name"); }
         }

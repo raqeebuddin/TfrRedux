@@ -10,6 +10,6 @@ namespace TfrRedo.Services.SearchStations.Queries.JourneyFinder
 {
     public interface IJourneyfinder
     {
-        Journey Get(Station station);
+        Journey Get(string stationIcsId);
     }
 }

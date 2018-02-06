@@ -24,5 +24,6 @@ namespace TfrRedo.Services.SearchStations.Queries.stationFinder
             var stationDetails = _webApiStationFinder.stationFinder(station);
             return stationDetails;
         }
+
     }
 }

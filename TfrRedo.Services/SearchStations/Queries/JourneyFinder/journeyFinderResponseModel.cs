@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Legs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace TfrRedo.Services.SearchStations.Queries.JourneyFinder
 {
     public class JourneyFinderResponseModel
     {
+       
         public List<Journey> Journeys { get; set; }
     }
 }

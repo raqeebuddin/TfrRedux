@@ -1,51 +1,37 @@
 ﻿@model TfrRedo.ViewModels.StationFinderResultPageViewModel
 
 @{
+    /**/
+
     ViewBag.Title = "StationFinderResultPage";
 }
 
 <h2>StationFinderResultPage</h2>
 
-
-@using (Html.BeginForm("JourneyPlanner", "Home"))
+@using (Html.BeginForm("StationFinderResultPage", "Home"))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>StationFinderResultPageViewModel</h4>
+        <h4>StationFinderView</h4>
         <hr />
-        @for (int i = 0; i < Model.Stations.Count; i++)
-        {
-            @Html.DisplayFor(m => m.Stations[i].Name);
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
-        }
 
+        <div class="form-group">
+            <div class="col-md-8">
+                @Html.DropDownListFor(m => m.SelectedStationIcsId, Model.StationItems, new { htmlAttributes = new { @class = "form-control", placeholder = "Select Station" } })
+                @Html.ValidationMessageFor(m => m.SelectedStationIcsId)
+            </div>
+        </div>
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
     </div>
 }
 
-@using (Html.BeginForm())
-{
-    //foreach (var item in Model.Questions)
-    for (int i = 0; i < Model.Stations.Count; i++)
-    {
-        <div class="form-group">
-            @Html.DisplayFor(modelItem => Model.Stations[i].Name, new { @class = "control-label col-md-4" })
-            <div class="col-md-6">
-               
-                    @Html.EditorFor(modelItem => (Model.Stations[i] as new TfrRedo.
-            </div>
-        </div>
-        <br />
-    }
-
-    <br />
-    <button type="submit">Submit</button>
-}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

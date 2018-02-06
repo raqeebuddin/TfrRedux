@@ -46,9 +46,19 @@ namespace TfrRedo.Controllers
         }
 
         [HttpPost]
-        public ActionResult JourneyPlanner (StationFinderResultPageViewModel station)
+        public ActionResult StationFinderResultPage(StationFinderResultPageViewModel stations)
         {
-            var journeyDetails =  _journeyFinder.Get(station.Stations[0]);
+            var journeyDetails = _journeyFinder.Get(stations.SelectedStationIcsId);
+            _journeyDetailsPageViewModel.Journey = journeyDetails;
+            _journeyDetailsPageViewModel.Journey.LegsTrain = journeyDetails.Legs;
+
+            return View("JourneyPlanner", _journeyDetailsPageViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult JourneyPlanner (StationFinderResultPageViewModel stationFinderviewModel)
+        {
+            var journeyDetails =  _journeyFinder.Get(stationFinderviewModel.SelectedStationIcsId);
             _journeyDetailsPageViewModel.Journey = journeyDetails;
 
             return View(_journeyDetailsPageViewModel);

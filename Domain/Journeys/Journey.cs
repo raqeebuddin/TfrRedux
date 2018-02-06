@@ -12,6 +12,7 @@ namespace TFR.Data.Models.Journey
         public DateTime StartDateTime { get; set; }
         public int Duration { get; set; }
         public DateTime ArrivalDateTime { get; set; }
+        public List<Leg> Legs { get; set; }
         public List<Leg> LegsTrain { get; set; }
         public List<Leg> LegsCycle { get; set; }
 

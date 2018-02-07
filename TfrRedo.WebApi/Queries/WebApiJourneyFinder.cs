@@ -12,7 +12,7 @@ using TfrRedo.Services.SearchStations.Queries.JourneyFinder;
 
 namespace TfrRedo.WebApi.Queries
 {
-    public class WebApiJourneyFinder  /*iWebApiJourneyFinder*/
+    public class WebApiJourneyFinder :iWebApiJourneyFinder
     {
         
         public  async Task<JourneyFinderResponseModel>JourneyFinder(string stationIcsId)
@@ -22,10 +22,10 @@ namespace TfrRedo.WebApi.Queries
 
             using (WebClient client = new WebClient())
             {
-                var json = await client.DownloadStringTaskAsync(journeyCall);
+                var json =  client.DownloadString(journeyCall);
                 var  journeys =  Newtonsoft.Json.JsonConvert.DeserializeObject<JourneyFinderResponseModel>(json);
 
-                return journeys;
+                return await Task.FromResult(journeys);
             }
         }
     }

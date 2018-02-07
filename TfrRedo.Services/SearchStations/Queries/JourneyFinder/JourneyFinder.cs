@@ -17,11 +17,11 @@ namespace TfrRedo.Services.SearchStations.Queries.JourneyFinder
         {
             _webApiJourneyFinder = webApiJourneyFinder;
         }
-        public Journey Get(string stationIcsId)
+        public  Journey Get(string stationIcsId)
         {
-            var journeyDetails = _webApiJourneyFinder.JourneyFinder(stationIcsId);
-
-            return journeyDetails.Journeys[0];
+            var journeyDetailsAsync = _webApiJourneyFinder.JourneyFinder(stationIcsId);
+            var journeyDetails = journeyDetailsAsync.Result.Journeys[0];
+            return journeyDetails;
         }
     }
 }

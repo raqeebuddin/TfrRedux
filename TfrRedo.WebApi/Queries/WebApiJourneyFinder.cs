@@ -23,7 +23,7 @@ namespace TfrRedo.WebApi.Queries
             using (WebClient client = new WebClient())
             {
                 var json =  client.DownloadString(journeyCall);
-                var  journeys =  Newtonsoft.Json.JsonConvert.DeserializeObject<JourneyFinderResponseModel>(json);
+                var journeys =  Newtonsoft.Json.JsonConvert.DeserializeObject<JourneyFinderResponseModel>(json);
 
                 return await Task.FromResult(journeys);
             }

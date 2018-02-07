@@ -9,6 +9,7 @@ namespace TfrRedo.ViewModels
 {
     public interface IStationFinderResultPageViewModel
     {
-        IList<Station> Stations { get; set; }
+        IList<Station> DepartureStations { get; set; }
+        IList<Station> ArrivalStations { get; set; }
     }
 }

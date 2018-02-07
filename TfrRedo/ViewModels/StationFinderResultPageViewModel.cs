@@ -9,13 +9,19 @@ namespace TfrRedo.ViewModels
 {
     public class StationFinderResultPageViewModel : IStationFinderResultPageViewModel
     {
-        public IList<Station> Stations { get; set; }
+        public IList<Station> DepartureStations { get; set; }
+        public IList<Station> ArrivalStations { get; set; }
 
         public string SelectedStationIcsId { get; set; }
 
-        public IEnumerable<SelectListItem> StationItems
+        public IEnumerable<SelectListItem> DepartureStationItems
         {
-            get { return new SelectList(Stations, "IcsId", "Name"); }
+            get { return new SelectList(DepartureStations, "IcsId", "Name"); }
+        }
+
+        public IEnumerable<SelectListItem> ArrivalStationItems
+        {
+            get { return new SelectList(ArrivalStations, "IcsId", "Name"); }
         }
     }
 }

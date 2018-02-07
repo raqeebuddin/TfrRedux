@@ -34,8 +34,9 @@ namespace TfrRedo.Controllers
         [HttpPost]
         public ActionResult Index(IndexPageViewModel indexPageViewModel)
         {
-            var stationFinder = _stationFinder.Get(indexPageViewModel.Arrival);
-            _stationFinderResultPageViewModel.Stations = stationFinder.Matches;
+            var stationFinder = _stationFinder.Get(indexPageViewModel.Departure, indexPageViewModel.Arrival);
+            _stationFinderResultPageViewModel.DepartureStations = stationFinder[0].Matches;
+            _stationFinderResultPageViewModel.ArrivalStations = stationFinder[1].Matches;
 
            return View("StationFinderResultPage", _stationFinderResultPageViewModel);
         }

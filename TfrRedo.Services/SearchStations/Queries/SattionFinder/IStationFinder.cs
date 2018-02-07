@@ -9,6 +9,6 @@ namespace TfrRedo.Services.SearchStations.Queries.stationFinder
 {
     public interface IStationFinder
     {
-        StationFinderResponseModel Get(Station station);
+        List<StationFinderResponseModel> Get(Station departure, Station arrival);
     }
 }

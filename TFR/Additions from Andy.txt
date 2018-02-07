@@ -1,0 +1,26 @@
+Yes, there are a few small issues with that method ?? 
+
+1.	Line 14 :: The interface name “iWebApiStationFinder” should be Pascal cased with a capital “I”.
+2.	Line 17 :: The method name should be Pascal cased.
+3.	Line 17 :: Async methods should have the suffix “Async”
+4.	Line 17 :: The method name does not describe the method’s purpose. Names should be “VerbObject”, so a better name is “FindStation()”
+5.	Lines 17 and 20 :: The only part of the Station object that’s used in the method is the Name property. Change the method signature to use just a string and pass in only the name value. Combined with the point above about the method name, this will give a more self-documenting method: FindStation(stationName)
+6.	Line 17 :: Looking at the StationFinderResponseModel class, it returns a list of matching stations. The method name should therefore reflect and document this: FindStations(stationName) [The extra “s” indicates to the caller that multiple results may be returned.]
+7.	Lines 17 and 20 :: The “station” parameter name is incorrectly spelt.
+8.	Line 19 :: The local variable “_restUri” should not begin with an underscore. Only class level private variables should begin with an underscore.
+9.	Line 19 :: Yes, “_restURI” may be a string with a URI to a RESTful API. However, if the URI changes or it becomes some other type of call, it may not be RESTful and the name will be misleading. Name the variable to the *purpose* not the content. So, call it something like findStationsApi because it is the URI of the API to find stations.
+10.	Line 19 :: You don’t need String.Format() with interpolated strings.
+11.	Line 20 :: The URL should be in a configuration file, not hard coded. Obviously you then can’t use string interpolation.
+12.	Line 21 :: Use “var” on the left hand side of the assignment in the using statement as the type is obvious from the assignment on the right hand side.
+13.	Line 26 :: Task.FromResult() is a blocking call. It will not run asynchronously.
+14.	Lines 17 and 26 :: There’s nothing asynchronous in this method. Make it synchronous and just return the searchDetails value or see if there’s a version of “client.DownloadString()” that is awaitable; that’s where the I/O delay that async avoids will occur.
+15.	The must be a try..catch around the DownloadString() method. Don’t break the whole application just because the external web service was unavailable or the JSON cannot be deserialised.
+16.	Make sure the error path can return a response model containing an empty list. Do not leave the StationFinderResponseModel.Matches property as null.
+17.	The StationFinderResponseModel object seems overkill. If the convention in the application is to return only models, then it’s not ideal but it’s the convention. But on the whole, returning the IList<Station> would create a tight, self-documenting method that tells the caller exactly what to pass in and what is returned.
+
+Task<IList<Station>> FindStationsAsync(string stationName);
+
+This tells me I can find stations asynchronously by passing in a station name. I may get more than one result back.
+18.	Lines 16 and 30 :: Remove the blank lines.
+
+Hope that helps,

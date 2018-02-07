@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IDatabaseService.cs" />
     <Compile Include="Interfaces\iWebApiJourneyFinder.cs" />
     <Compile Include="Interfaces\IWebApiStationfinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

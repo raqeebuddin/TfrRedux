@@ -9,6 +9,7 @@ namespace TFR.Data.Models.Journey
 {
     public class Journey
     {
+        public int Id { get; set; }          
         public DateTime StartDateTime { get; set; }
         public int Duration { get; set; }
         public DateTime ArrivalDateTime { get; set; }

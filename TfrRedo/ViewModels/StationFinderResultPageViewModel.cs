@@ -12,7 +12,8 @@ namespace TfrRedo.ViewModels
         public IList<Station> DepartureStations { get; set; }
         public IList<Station> ArrivalStations { get; set; }
 
-        public string SelectedStationIcsId { get; set; }
+        public string SelectedDepartureStationIcsId { get; set; }
+        public string SelectedArrivalStationIcsId { get; set; } 
 
         public IEnumerable<SelectListItem> DepartureStationItems
         {

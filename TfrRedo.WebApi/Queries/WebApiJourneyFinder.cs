@@ -15,10 +15,10 @@ namespace TfrRedo.WebApi.Queries
     public class WebApiJourneyFinder :iWebApiJourneyFinder
     {
         
-        public  async Task<JourneyFinderResponseModel>JourneyFinder(string stationIcsId)
+        public  async Task<JourneyFinderResponseModel>JourneyFinder(string departureStationIcsId, string arrivalStationIcsId)
         {
             var journeyCall = String.Format(
-              $"https://api.tfl.gov.uk/journey/journeyresults/{stationIcsId}/to/1000013?&mode=tube");
+              $"https://api.tfl.gov.uk/journey/journeyresults/{departureStationIcsId}/to/{arrivalStationIcsId}?&mode=tube");
 
             using (WebClient client = new WebClient())
             {

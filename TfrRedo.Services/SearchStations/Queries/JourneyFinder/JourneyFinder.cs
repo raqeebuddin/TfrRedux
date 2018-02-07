@@ -17,9 +17,9 @@ namespace TfrRedo.Services.SearchStations.Queries.JourneyFinder
         {
             _webApiJourneyFinder = webApiJourneyFinder;
         }
-        public  Journey Get(string stationIcsId)
+        public  Journey Get(string departureStationIcsId, string arrivalStationIcsId)
         {
-            var journeyDetailsAsync = _webApiJourneyFinder.JourneyFinder(stationIcsId);
+            var journeyDetailsAsync = _webApiJourneyFinder.JourneyFinder(departureStationIcsId, arrivalStationIcsId);
             var journeyDetails = journeyDetailsAsync.Result.Journeys[0];
             return journeyDetails;
         }

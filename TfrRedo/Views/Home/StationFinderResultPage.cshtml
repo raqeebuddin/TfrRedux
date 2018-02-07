@@ -18,15 +18,15 @@
 
         <div class="form-group">
             <div class="col-md-8">
-                @Html.DropDownListFor(m => m.SelectedStationIcsId, Model.DepartureStationItems, new { htmlAttributes = new { @class = "form-control", placeholder = "Select Departure Station" } })
-                @Html.ValidationMessageFor(m => m.SelectedStationIcsId)
+                @Html.DropDownListFor(m => m.SelectedArrivalStationIcsId, Model.DepartureStationItems, new { htmlAttributes = new { @class = "form-control", placeholder = "Select Departure Station" } })
+                @Html.ValidationMessageFor(m => m.SelectedArrivalStationIcsId)
             </div>
         </div>
         
         <div class="form-group">
         <div class="col-md-8">
-            @Html.DropDownListFor(m => m.SelectedStationIcsId, Model.ArrivalStationItems, new { htmlAttributes = new { @class = "form-control", placeholder = "Select Arrival Station" } })
-            @Html.ValidationMessageFor(m => m.SelectedStationIcsId)
+            @Html.DropDownListFor(m => m.SelectedDepartureStationIcsId, Model.ArrivalStationItems, new { htmlAttributes = new { @class = "form-control", placeholder = "Select Arrival Station" } })
+            @Html.ValidationMessageFor(m => m.SelectedDepartureStationIcsId)
         </div>
     </div>
 

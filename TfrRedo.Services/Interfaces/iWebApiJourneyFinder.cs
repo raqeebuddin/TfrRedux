@@ -10,6 +10,6 @@ namespace TfrRedo.Services.Interfaces
 {
     public interface iWebApiJourneyFinder
     {
-         Task<JourneyFinderResponseModel> JourneyFinder(string stationIcsId);
+         Task<JourneyFinderResponseModel> JourneyFinder(string dartureStationIcsId, string arrivalIcsId);
     }
 }

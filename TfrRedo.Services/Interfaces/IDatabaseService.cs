@@ -11,5 +11,7 @@ namespace TfrRedo.Services.Interfaces
     {
         void Save(Journey journey);
         void Delete(Journey journey);
+
+        List<Journey> AllJourneys();
     }
 }

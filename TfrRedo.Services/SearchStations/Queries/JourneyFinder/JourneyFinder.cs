@@ -24,6 +24,7 @@ namespace TfrRedo.Services.SearchStations.Queries.JourneyFinder
             var journeyDetailsAsync = _webApiJourneyFinder.JourneyFinder(departureStationIcsId, arrivalStationIcsId);
             var journeyDetails = journeyDetailsAsync.Result.Journeys[0];
             _databaseService.Save(journeyDetails);
+            var journeys = _databaseService.AllJourneys();
             return journeyDetails;
         }
     }

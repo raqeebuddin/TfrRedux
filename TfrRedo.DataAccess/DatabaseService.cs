@@ -23,5 +23,11 @@ namespace TfrRedo.DataAccess
             _tfrContext.Journey.Remove(journey);
             _tfrContext.SaveChanges();
         }
+        public List<Journey> AllJourneys()
+        {
+            var journeys = _tfrContext.Journey.ToList();
+
+            return journeys;
+        }
     }
 }

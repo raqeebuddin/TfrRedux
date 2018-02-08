@@ -15,11 +15,13 @@ namespace TfrRedo.DataAccess
         public void Save(Journey journey)
         {
             _tfrContext.Journey.Add(journey);
+            _tfrContext.SaveChanges();
         }
 
         public void Delete(Journey journey)
         {
             _tfrContext.Journey.Remove(journey);
+            _tfrContext.SaveChanges();
         }
     }
 }

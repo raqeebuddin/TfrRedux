@@ -239,6 +239,10 @@
       <Project>{B66FD1AD-D452-4C9E-A6EA-9FD87FF7C65A}</Project>
       <Name>TfrRedo.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TfrRedo.DataAccess\TfrRedo.DataAccess.csproj">
+      <Project>{278867B0-B200-4E55-8EFF-069D4095DA2A}</Project>
+      <Name>TfrRedo.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TfrRedo.Services\TfrRedo.Services.csproj">
       <Project>{50B84DFE-EA5C-4F17-8689-029DFE6D8296}</Project>
       <Name>TfrRedo.Services</Name>

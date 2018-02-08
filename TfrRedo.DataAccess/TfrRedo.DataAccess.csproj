@@ -48,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseService.cs" />
+    <Compile Include="Migrations\201802081428105_initial.cs" />
+    <Compile Include="Migrations\201802081428105_initial.Designer.cs">
+      <DependentUpon>201802081428105_initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="TfrContext.cs" />
     <Compile Include="Migrations\201802071621319_InitialMigration.cs" />
     <Compile Include="Migrations\201802071621319_InitialMigration.Designer.cs">
@@ -74,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802071621319_InitialMigration.resx">
       <DependentUpon>201802071621319_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802081428105_initial.resx">
+      <DependentUpon>201802081428105_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

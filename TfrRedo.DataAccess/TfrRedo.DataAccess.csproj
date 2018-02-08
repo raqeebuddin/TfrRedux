@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseService.cs" />
-    <Compile Include="DbContext.cs" />
+    <Compile Include="TfrContext.cs" />
     <Compile Include="Migrations\201802071621319_InitialMigration.cs" />
     <Compile Include="Migrations\201802071621319_InitialMigration.Designer.cs">
       <DependentUpon>201802071621319_InitialMigration.cs</DependentUpon>

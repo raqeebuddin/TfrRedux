@@ -10,6 +10,6 @@ namespace TfrRedo.Services.Interfaces
     public interface IDatabaseService
     {
         void Save(Journey journey);
-        void Update(Journey journey);
+        void Delete(Journey journey);
     }
 }

@@ -10,14 +10,16 @@ namespace TfrRedo.DataAccess
 {
     public class DatabaseService : IDatabaseService
     {
+        private TfrContext _tfrContext = new TfrContext();
+       
         public void Save(Journey journey)
         {
-            throw new NotImplementedException();
+            _tfrContext.Journey.Add(journey);
         }
 
-        public void Update(Journey journey)
+        public void Delete(Journey journey)
         {
-            throw new NotImplementedException();
+            _tfrContext.Journey.Remove(journey);
         }
     }
 }

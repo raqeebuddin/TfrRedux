@@ -9,7 +9,7 @@ namespace TfrRedo.ViewModels
 {
     public interface IPreviousJourneysViewModel
     {
-        List<Journey> Journeys { get; set; }
+        IEnumerable<Journey> Journeys { get; set; }
     }
     
 }

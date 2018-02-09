@@ -9,15 +9,18 @@ namespace TfrRedo.Controllers
     {
         private readonly IIndexPageViewModel _indexPageViewModel;
         private readonly IStationFinder _stationFinder;
-        private  IStationFinderResultPageViewModel _stationFinderResultPageViewModel;
-        private IJourneyfinder _journeyFinder;
-        private IJourneyDetailsPageViewModel _journeyDetailsPageViewModel;
+        private readonly IStationFinderResultPageViewModel _stationFinderResultPageViewModel;
+        private readonly IJourneyfinder _journeyFinder;
+        private readonly IJourneyDetailsPageViewModel _journeyDetailsPageViewModel;
+        private  IPreviousJourneysViewModel _previousJourneys;
+
         public HomeController(
-            IIndexPageViewModel indexPageViewModel, 
+            IIndexPageViewModel indexPageViewModel,
             IStationFinder stationFinder,
             IStationFinderResultPageViewModel stationFinderResultPageViewModel,
             IJourneyfinder journeyFinder,
-            IJourneyDetailsPageViewModel journeyDetailsPageViewModel
+            IJourneyDetailsPageViewModel journeyDetailsPageViewModel,
+            IPreviousJourneysViewModel previousJourneys
             )
         {
             _indexPageViewModel = indexPageViewModel;
@@ -25,6 +28,7 @@ namespace TfrRedo.Controllers
             _stationFinder = stationFinder;
             _stationFinderResultPageViewModel = stationFinderResultPageViewModel;
             _journeyDetailsPageViewModel = journeyDetailsPageViewModel;
+            _previousJourneys = previousJourneys;
         }
         [HttpGet]
         public ActionResult Index()
@@ -54,10 +58,10 @@ namespace TfrRedo.Controllers
         [HttpGet]
         public ActionResult PreviousJourneys()
         {
-            var previousJourneys = _journeyFinder.GetAllJourneys();
+            _previousJourneys.Journeys = _journeyFinder.GetAllJourneys();
           
 
-            return View(previousJourneys);
+            return View(_previousJourneys);
         }
 
     }

@@ -10,7 +10,7 @@ namespace TfrRedo.DataAccess
 {
     public class DatabaseService : IDatabaseService
     {
-        private TfrContext _tfrContext = new TfrContext();
+        private readonly TfrContext _tfrContext = new TfrContext();
        
         public void Save(Journey journey)
         {
@@ -23,7 +23,7 @@ namespace TfrRedo.DataAccess
             _tfrContext.Journey.Remove(journey);
             _tfrContext.SaveChanges();
         }
-        public List<Journey> AllJourneys()
+        public IEnumerable<Journey> AllJourneys()
         {
             var journeys = _tfrContext.Journey.ToList();
 

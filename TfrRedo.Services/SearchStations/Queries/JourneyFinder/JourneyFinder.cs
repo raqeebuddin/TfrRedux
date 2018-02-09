@@ -24,7 +24,7 @@ namespace TfrRedo.Services.SearchStations.Queries.JourneyFinder
             return journeyDetails;
         }
 
-        public List<Journey> GetAllJourneys()
+        public IEnumerable<Journey> GetAllJourneys()
         {
             var journeys = _databaseService.AllJourneys();
             return journeys;

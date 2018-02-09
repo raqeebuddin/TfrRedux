@@ -8,6 +8,6 @@ namespace TfrRedo.ViewModels
 {
     public class PreviousJourneysViewModel:IPreviousJourneysViewModel
     {
-        public List<Journey> Journeys { get; set; }
+        public IEnumerable<Journey> Journeys { get; set; }
     }
 }

@@ -1,29 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net;
-using System.Text;
+﻿using System.Net;
 using System.Threading.Tasks;
-using Domain.Stations;
-using TFR.Data.Models.Journey;
+using Newtonsoft.Json;
 using TfrRedo.Services.Interfaces;
 using TfrRedo.Services.SearchStations.Queries.JourneyFinder;
 
 namespace TfrRedo.WebApi.Queries
 {
-    public class WebApiJourneyFinder :iWebApiJourneyFinder
+    public class WebApiJourneyFinder : iWebApiJourneyFinder
     {
-        
-        public  async Task<JourneyFinderResponseModel>JourneyFinder(string departureStationIcsId, string arrivalStationIcsId)
+        public async Task<JourneyFinderResponseModel> JourneyFinder(string departureStationIcsId,
+            string arrivalStationIcsId)
         {
-            var journeyCall = String.Format(
-              $"https://api.tfl.gov.uk/journey/journeyresults/{departureStationIcsId}/to/{arrivalStationIcsId}?&mode=tube");
+            var journeyCall = string.Format(
+                $"https://api.tfl.gov.uk/journey/journeyresults/{departureStationIcsId}/to/{arrivalStationIcsId}?&mode=tube");
 
-            using (WebClient client = new WebClient())
+            using (var client = new WebClient())
             {
-                var json =  client.DownloadString(journeyCall);
-                var journeys =  Newtonsoft.Json.JsonConvert.DeserializeObject<JourneyFinderResponseModel>(json);
+                var json = client.DownloadString(journeyCall);
+                var journeys = JsonConvert.DeserializeObject<JourneyFinderResponseModel>(json);
 
                 return await Task.FromResult(journeys);
             }

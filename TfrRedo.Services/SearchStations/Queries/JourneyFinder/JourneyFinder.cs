@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
-using TFR.Data.Models.Journey;
 using TfrRedo.Services.Interfaces;
+using TFR.Data.Models.Journey;
 
 namespace TfrRedo.Services.SearchStations.Queries.JourneyFinder
 {
     public class JourneyFinder : IJourneyfinder
     {
-        private readonly iWebApiJourneyFinder _webApiJourneyFinder;
         private readonly IDatabaseService _databaseService;
+        private readonly iWebApiJourneyFinder _webApiJourneyFinder;
 
         public JourneyFinder(iWebApiJourneyFinder webApiJourneyFinder, IDatabaseService databaseService)
         {
@@ -20,7 +20,7 @@ namespace TfrRedo.Services.SearchStations.Queries.JourneyFinder
             var journeyDetailsAsync = _webApiJourneyFinder.JourneyFinder(departureStationIcsId, arrivalStationIcsId);
             var journeyDetails = journeyDetailsAsync.Result.Journeys[0];
             _databaseService.Save(journeyDetails);
-           
+
             return journeyDetails;
         }
 

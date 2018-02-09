@@ -1,9 +1,5 @@
-﻿using Domain.Stations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Domain.Stations;
 using TfrRedo.Services.SearchStations.Queries.stationFinder;
 
 namespace TfrRedo.Services.Interfaces

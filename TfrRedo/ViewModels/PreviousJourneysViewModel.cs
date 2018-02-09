@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using TFR.Data.Models.Journey;
 
 namespace TfrRedo.ViewModels
 {
-    public class PreviousJourneysViewModel:IPreviousJourneysViewModel
+    public class PreviousJourneysViewModel : IPreviousJourneysViewModel
     {
         public IEnumerable<Journey> Journeys { get; set; }
     }

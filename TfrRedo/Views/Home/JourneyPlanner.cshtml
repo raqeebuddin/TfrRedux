@@ -8,7 +8,7 @@
 
 <div>
     <h4>JourneyDetailsPageViewModel</h4>
-    <hr />
+    <hr/>
     <dl class="dl-horizontal"></dl>
 </div>
 
@@ -26,3 +26,10 @@
     @Model.Journey.LegsTrain[0].Instruction.Summary
 </div>
 
+<div>
+    @Html.ActionLink("Back to Search", "Index")
+
+</div>
+<div>
+    @Html.ActionLink("Previous Journeys", "PreviousJourneys")
+</div>

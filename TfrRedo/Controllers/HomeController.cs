@@ -51,5 +51,14 @@ namespace TfrRedo.Controllers
             return View("JourneyPlanner", _journeyDetailsPageViewModel);
         }
 
+        [HttpGet]
+        public ActionResult PreviousJourneys()
+        {
+            var previousJourneys = _journeyFinder.GetAllJourneys();
+          
+
+            return View(previousJourneys);
+        }
+
     }
 }

@@ -171,11 +171,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\IIndexPageViewModel.cs" />
+    <Compile Include="Interfaces\IIndexPageViewModel.cs" />
     <Compile Include="ViewModels\IndexPageViewModel.cs" />
-    <Compile Include="ViewModels\IJourneyDetailsPageViewModel.cs" />
-    <Compile Include="ViewModels\IStationFinderResultPageViewModel.cs" />
+    <Compile Include="Interfaces\IJourneyDetailsPageViewModel.cs" />
+    <Compile Include="Interfaces\IStationFinderResultPageViewModel.cs" />
+    <Compile Include="Interfaces\IPreviousJourneysViewModel.cs" />
     <Compile Include="ViewModels\JourneyDetailsPageViewModel.cs" />
+    <Compile Include="ViewModels\PreviousJourneysViewModel.cs" />
     <Compile Include="ViewModels\StationFinderResultPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +219,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\StationFinderResultPage.cshtml" />
     <Content Include="Views\Home\JourneyPlanner.cshtml" />
+    <Content Include="Views\Home\PreviousJourneys.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

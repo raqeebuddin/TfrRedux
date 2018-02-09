@@ -1,0 +1,35 @@
+﻿@model TfrRedo.ViewModels.PreviousJourneysViewModel
+
+@{
+    ViewBag.Title = "PreviousJourneys";
+}
+
+<div class="col-lg-12 title">
+<h2>Previous Journeys</h2>
+</div>
+<table class="table">
+
+    @foreach (var station in Model.Journeys)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(m => station.ArrivalDateTime)
+            </td>
+
+            <td>
+                @Html.DisplayFor(m => station.Duration)
+            </td>
+
+            <td>
+                @Html.DisplayFor(m =>station.StartDateTime)
+            </td>
+
+            <td>
+                @Html.ActionLink("Delete Journey", "Delete", new {id = station.Id}, new {@class = "btn btn-warning btn-lg"})
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Back to Search", "Index")
+</p>

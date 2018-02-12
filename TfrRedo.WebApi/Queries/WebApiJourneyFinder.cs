@@ -6,7 +6,7 @@ using TfrRedo.Services.SearchStations.Queries.JourneyFinder;
 
 namespace TfrRedo.WebApi.Queries
 {
-    public class WebApiJourneyFinder : iWebApiJourneyFinder
+    public class WebApiJourneyFinder : IWebApiJourneyFinder
     {
         public async Task<JourneyFinderResponseModel> JourneyFinder(string departureStationIcsId,
             string arrivalStationIcsId)

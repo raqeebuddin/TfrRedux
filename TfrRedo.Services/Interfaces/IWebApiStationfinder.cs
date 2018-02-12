@@ -4,7 +4,7 @@ using TfrRedo.Services.SearchStations.Queries.stationFinder;
 
 namespace TfrRedo.Services.Interfaces
 {
-    public interface iWebApiStationFinder
+    public interface IWebApiStationFinder
     {
         Task<StationFinderResponseModel> StationFinder(Station station);
     }

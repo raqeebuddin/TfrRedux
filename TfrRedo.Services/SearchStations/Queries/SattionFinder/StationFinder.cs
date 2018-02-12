@@ -9,10 +9,10 @@ namespace TfrRedo.Services.SearchStations.Queries.stationFinder
 
 
     {
-        private readonly iWebApiStationFinder _webApiStationFinder;
+        private readonly IWebApiStationFinder _webApiStationFinder;
 
         public StationFinder(
-            iWebApiStationFinder webApiStationFinder)
+            IWebApiStationFinder webApiStationFinder)
         {
             _webApiStationFinder = webApiStationFinder;
         }

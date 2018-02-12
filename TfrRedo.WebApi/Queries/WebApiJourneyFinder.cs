@@ -11,12 +11,12 @@ namespace TfrRedo.WebApi.Queries
         public async Task<JourneyFinderResponseModel> JourneyFinderAsync(string departureStationIcsId,
             string arrivalStationIcsId)
         {
-            var journeyCall = string.Format(
+            var findJourneyApi = string.Format(
                 $"https://api.tfl.gov.uk/journey/journeyresults/{departureStationIcsId}/to/{arrivalStationIcsId}?&mode=tube");
 
             using (var client = new WebClient())
             {
-                var json = client.DownloadString(journeyCall);
+                var json = client.DownloadString(findJourneyApi);
                 var journeys = JsonConvert.DeserializeObject<JourneyFinderResponseModel>(json);
 
                 return await Task.FromResult(journeys);

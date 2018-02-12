@@ -15,10 +15,10 @@ namespace TfrRedo.WebApi.Queries
                 $"https://api.tfl.gov.uk/Stoppoint/Search/{statiion.Name}?modes=tube&useMultiModalCall=false");
             using (var client = new WebClient())
             {
-                var json = client.DownloadString(findStattionApi);
+                var json = await client.DownloadStringTaskAsync(findStattionApi);
                 var searchDetails = JsonConvert.DeserializeObject<StationFinderResponseModel>(json);
 
-                return await Task.FromResult(searchDetails);
+                return (searchDetails);
             }
         }
     }

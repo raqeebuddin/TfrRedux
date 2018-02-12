@@ -16,10 +16,10 @@ namespace TfrRedo.WebApi.Queries
 
             using (var client = new WebClient())
             {
-                var json =  await  client.DownloadStringTaskAsync(findJourneyApi);
+                var json = client.DownloadString(findJourneyApi);
                 var journeys = JsonConvert.DeserializeObject<JourneyFinderResponseModel>(json);
 
-                return (journeys);
+                return await Task.FromResult(journeys);
             }
         }
     }

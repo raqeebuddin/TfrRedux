@@ -55,7 +55,7 @@ namespace TfrRedo.App_Start
                 kernel.Bind<iWebApiStationFinder>().To<WebApiStationFinder>();
                 kernel.Bind<IStationFinderResultPageViewModel>().To<StationFinderResultPageViewModel>();
                 kernel.Bind<IJourneyfinder>().To<JourneyFinder>();
-                kernel.Bind<iWebApiJourneyFinder>().To<WebApiJourneyFinder>();
+                kernel.Bind<IWebApiJourneyFinder>().To<WebApiJourneyFinder>();
                 kernel.Bind<IJourneyDetailsPageViewModel>().To<JourneyDetailsPageViewModel>();
                 kernel.Bind<IDatabaseService>().To<DatabaseService>();
                 kernel.Bind<IPreviousJourneysViewModel>().To<PreviousJourneysViewModel>();

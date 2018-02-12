@@ -8,7 +8,7 @@ namespace TfrRedo.WebApi.Queries
 {
     public class WebApiJourneyFinder : IWebApiJourneyFinder
     {
-        public async Task<JourneyFinderResponseModel> JourneyFinder(string departureStationIcsId,
+        public async Task<JourneyFinderResponseModel> JourneyFinderAsync(string departureStationIcsId,
             string arrivalStationIcsId)
         {
             var journeyCall = string.Format(

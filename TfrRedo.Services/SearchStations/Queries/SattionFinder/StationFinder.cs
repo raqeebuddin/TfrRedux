@@ -21,8 +21,8 @@ namespace TfrRedo.Services.SearchStations.Queries.stationFinder
         {
             var departureArrivalStationList = new List<StationFinderResponseModel>();
 
-            var departureStationDetailsAsync = _webApiStationFinder.stationFinder(departure);
-            var arrivalStationDetailsAsync = _webApiStationFinder.stationFinder(arrival);
+            var departureStationDetailsAsync = _webApiStationFinder.StationFinder(departure);
+            var arrivalStationDetailsAsync = _webApiStationFinder.StationFinder(arrival);
 
             var departureStationDetails = departureStationDetailsAsync.Result;
             var arrivalStationDetails = arrivalStationDetailsAsync.Result;

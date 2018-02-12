@@ -10,6 +10,7 @@ namespace TfrRedo.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Ninject.Web.Common.WebHost;
     using TfrRedo.DataAccess;
     using TfrRedo.Services.Interfaces;
     using TfrRedo.Services.SearchStations.Queries.JourneyFinder;

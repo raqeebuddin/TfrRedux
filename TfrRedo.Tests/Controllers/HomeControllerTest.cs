@@ -1,5 +1,8 @@
 ﻿
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Policy;
 using System.Web.Mvc;
+using Domain.Stations;
 using Moq;
 using NUnit.Framework;
 
@@ -33,7 +36,7 @@ namespace TfrRedo.Tests.Controllers
         //}
 
         [Test]
-        public void ShouldReturnIndexViewPageViewModel()
+        public void ShouldReturnViewResultFromIndexMethod()
         {
             _mockIndexViewPageModel = new Mock<IIndexPageViewModel>().Object;
             _mockStationFinder = new Mock<IStationFinder>().Object;
@@ -51,8 +54,42 @@ namespace TfrRedo.Tests.Controllers
             var result = sut.Index();
 
             Assert.That(result, Is.TypeOf<ViewResult>());
-
         }
+
+        [Test]
+        public void ShoudldRenderStationFinderResultPage()
+        {
+            _mockIndexViewPageModel = new Mock<IIndexPageViewModel>().Object;
+            _mockStationFinder = new Mock<IStationFinder>().Object;
+            _mockStationFinderResultPageModel = new Mock<IStationFinderResultPageViewModel>().Object;
+            _mockJourneyFinder = new Mock<IJourneyfinder>().Object;
+            _mockJourneyDetailsPageViewModel = new Mock<IJourneyDetailsPageViewModel>().Object;
+            _mockPreviousJourneyViewModel = new Mock<IPreviousJourneysViewModel>().Object;
+
+            var sut = new HomeController(
+                _mockIndexViewPageModel,
+                _mockStationFinder, _mockStationFinderResultPageModel, _mockJourneyFinder,
+                _mockJourneyDetailsPageViewModel, _mockPreviousJourneyViewModel);
+
+            var mockIndexPageViewModel =
+                new Mock<IndexPageViewModel>().Object;
+
+
+
+            var mock = new Mock<IndexPageViewModel>();
+
+            mock.SetupSet(m => m.Arrival = It.Is<IndexLandingPageModel>(station => station.Name == "Kings")).Verifiable();
+
+
+            var result = sut.Index(mock.Object) as ViewResult;
+
+
+            mock.Verify();
+
+            Assert.That(result.ViewName, Is.EqualTo("StationFinderResultPage"));
+        }
+
+
 
     }
 

@@ -4,7 +4,7 @@ namespace TfrRedo.ViewModels
 {
     public class IndexPageViewModel : IIndexPageViewModel
     {
-        public Station Arrival { get; set; }
-        public Station Departure { get; set; }
+        public IndexLandingPageModel Arrival { get; set; }
+        public IndexLandingPageModel Departure { get; set; }
     }
 }

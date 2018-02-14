@@ -5,6 +5,6 @@ namespace TfrRedo.Services.SearchStations.Queries.stationFinder
 {
     public class StationFinderResponseModel
     {
-        public IList<Station> Matches { get; set; }
+        public IList<IndexLandingPageModel> Matches { get; set; }
     }
 }

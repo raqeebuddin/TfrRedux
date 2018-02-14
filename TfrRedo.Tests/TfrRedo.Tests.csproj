@@ -26,6 +26,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -113,6 +114,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Domain\TfrRedo.Domain.csproj">
+      <Project>{B66FD1AD-D452-4C9E-A6EA-9FD87FF7C65A}</Project>
+      <Name>TfrRedo.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TfrRedo.Services\TfrRedo.Services.csproj">
+      <Project>{50B84DFE-EA5C-4F17-8689-029DFE6D8296}</Project>
+      <Name>TfrRedo.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TfrRedo.WebApi\TfrRedo.WebApi.csproj">
+      <Project>{6F29F6EF-9FEE-48BD-9258-1476F8F3A780}</Project>
+      <Name>TfrRedo.WebApi</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TfrRedo\TfrRedo.Website.csproj">
       <Project>{79255A39-3A6D-4EFE-80A4-A21CE73A433E}</Project>
       <Name>TfrRedo.Website</Name>

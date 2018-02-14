@@ -13,7 +13,7 @@ namespace TfrRedo.ViewModels
 
         public IEnumerable<SelectListItem> ArrivalStationItems => new SelectList(ArrivalStations, "IcsId", "Name");
 
-        public IList<Station> DepartureStations { get; set; }
-        public IList<Station> ArrivalStations { get; set; }
+        public IList<IndexLandingPageModel> DepartureStations { get; set; }
+        public IList<IndexLandingPageModel> ArrivalStations { get; set; }
     }
 }

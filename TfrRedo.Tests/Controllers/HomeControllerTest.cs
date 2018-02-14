@@ -90,6 +90,19 @@ namespace TfrRedo.Tests.Controllers
         }
 
 
+        //public void TestMethod()
+        //{
+        //    var serviceMock = new Mock<IMyService>();
+        //    var objectUnderTest = new MyViewModel(serviceMock.Object);
+
+        //    serviceMock.Setup(x => x.GetData()).Returns(42);
+
+        //    var result = objectUnderTest.ShowSomething();
+
+        //    Assert.AreEqual("Just a test 42", result);
+        //    serviceMock.Verify(c => c.GetData(), Times.Once());
+        //}
+
 
     }
 

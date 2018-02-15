@@ -17,7 +17,7 @@ namespace TfrRedo.Services.SearchStations.Queries.stationFinder
             _webApiStationFinder = webApiStationFinder;
         }
 
-        public List<StationFinderResponseModel> Get(IndexLandingPageModel departure, IndexLandingPageModel arrival)
+        public List<StationFinderResponseModel> Get(Station departure, Station arrival)
         {
             var departureArrivalStationList = new List<StationFinderResponseModel>();
 

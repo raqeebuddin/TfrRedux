@@ -6,6 +6,6 @@ namespace TfrRedo.Services.Interfaces
 {
     public interface IWebApiStationFinder
     {
-        Task<StationFinderResponseModel> StationFinder(IndexLandingPageModel station);
+        Task<StationFinderResponseModel> StationFinder(Station station);
     }
 }

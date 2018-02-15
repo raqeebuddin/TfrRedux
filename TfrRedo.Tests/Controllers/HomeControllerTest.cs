@@ -56,38 +56,38 @@ namespace TfrRedo.Tests.Controllers
             Assert.That(result, Is.TypeOf<ViewResult>());
         }
 
-        [Test]
-        public void ShoudldRenderStationFinderResultPage()
-        {
-            _mockIndexViewPageModel = new Mock<IIndexPageViewModel>().Object;
-            _mockStationFinder = new Mock<IStationFinder>().Object;
-            _mockStationFinderResultPageModel = new Mock<IStationFinderResultPageViewModel>().Object;
-            _mockJourneyFinder = new Mock<IJourneyfinder>().Object;
-            _mockJourneyDetailsPageViewModel = new Mock<IJourneyDetailsPageViewModel>().Object;
-            _mockPreviousJourneyViewModel = new Mock<IPreviousJourneysViewModel>().Object;
+        //[Test]
+        //public void ShoudldRenderStationFinderResultPage()
+        //{
+        //    _mockIndexViewPageModel = new Mock<IIndexPageViewModel>().Object;
+        //    _mockStationFinder = new Mock<IStationFinder>().Object;
+        //    _mockStationFinderResultPageModel = new Mock<IStationFinderResultPageViewModel>().Object;
+        //    _mockJourneyFinder = new Mock<IJourneyfinder>().Object;
+        //    _mockJourneyDetailsPageViewModel = new Mock<IJourneyDetailsPageViewModel>().Object;
+        //    _mockPreviousJourneyViewModel = new Mock<IPreviousJourneysViewModel>().Object;
 
-            var sut = new HomeController(
-                _mockIndexViewPageModel,
-                _mockStationFinder, _mockStationFinderResultPageModel, _mockJourneyFinder,
-                _mockJourneyDetailsPageViewModel, _mockPreviousJourneyViewModel);
+        //    var sut = new HomeController(
+        //        _mockIndexViewPageModel,
+        //        _mockStationFinder, _mockStationFinderResultPageModel, _mockJourneyFinder,
+        //        _mockJourneyDetailsPageViewModel, _mockPreviousJourneyViewModel);
 
-            var mockIndexPageViewModel =
-                new Mock<IndexPageViewModel>().Object;
-
-
-
-            var mock = new Mock<IndexPageViewModel>();
-
-            mock.SetupSet(m => m.Arrival = It.Is<IndexLandingPageModel>(station => station.Name == "Kings")).Verifiable();
+        //    var mockIndexPageViewModel =
+        //        new Mock<IndexPageViewModel>().Object;
 
 
-            var result = sut.Index(mock.Object) as ViewResult;
+
+        //    var mock = new Mock<IndexPageViewModel>();
+
+        //    mock.SetupSet(m => m.Arrival = It.Is<IndexLandingPageModel>(station => station.Name == "Kings")).Verifiable();
 
 
-            mock.Verify();
+        //    var result = sut.Index(mock.Object) as ViewResult;
 
-            Assert.That(result.ViewName, Is.EqualTo("StationFinderResultPage"));
-        }
+
+        //    mock.Verify();
+
+        //    Assert.That(result.ViewName, Is.EqualTo("StationFinderResultPage"));
+        //}
 
 
 

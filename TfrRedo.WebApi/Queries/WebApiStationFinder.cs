@@ -10,7 +10,7 @@ namespace TfrRedo.WebApi.Queries
 {
     public class WebApiStationFinder : IWebApiStationFinder
     {
-        public async Task<StationFinderResponseModel> StationFinder(IndexLandingPageModel statiion)
+        public async Task<StationFinderResponseModel> StationFinder(Station statiion)
         {
             try
             {

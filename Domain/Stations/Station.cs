@@ -2,7 +2,7 @@
 
 namespace Domain.Stations
 {
-    public class IndexLandingPageModel : IEntity
+    public class Station : IEntity
     {
         public string Name { get; set; }
         public string IcsId { get; set; }

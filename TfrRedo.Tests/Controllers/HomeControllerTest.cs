@@ -56,39 +56,44 @@ namespace TfrRedo.Tests.Controllers
             var _mockJourneyDetailsPageViewModel = new Mock<IJourneyDetailsPageViewModel>();
             var _mockPreviousJourneyViewModel = new Mock<IPreviousJourneysViewModel>();
 
-            var sut = new HomeController(_mockIndexViewPageModel.Object,_mockStationFinder.Object, 
-                _mockStationFinderResultPageModel.Object, _mockJourneyFinder.Object, 
+            var sut = new HomeController(_mockIndexViewPageModel.Object, _mockStationFinder.Object,
+                _mockStationFinderResultPageModel.Object, _mockJourneyFinder.Object,
                 _mockJourneyDetailsPageViewModel.Object, _mockPreviousJourneyViewModel.Object);
 
-            _mockStationFinder.Setup(x => x.Get(It.IsAny<Station>(), It.IsAny<Station>())).
-                Returns(new List<StationFinderResponseModel>()
-                {
-                    new StationFinderResponseModel()
-                    {Matches = new List<Station>()
-                    {
-                        new Station(){Name = "DepartureStation"},
-
-                    }},
-                    new StationFinderResponseModel()
-                        {Matches = new List<Station>()
-                        {
-                            new Station(){Name = "ArrivalStation"},
-                                         
-                        }}
-                });
-
+            _mockStationFinder.Setup(x => x.Get(It.IsAny<Station>(), It.IsAny<Station>()));
             var indexLandingPageModel = new IndexPageViewModel()
             {
-                Arrival = new Station() {Name = "Kings"},
-                Departure = new Station() { Name = "Tott"}
+                Arrival = new Station() { Name = "Kings" },
+                Departure = new Station() { Name = "Tott" }
             };
 
-            var result = sut.Index(indexLandingPageModel) as ViewResult;
-           
-            
-            
+
+            sut.Index(indexLandingPageModel);
+            _mockStationFinder.VerifyAll();
+
         }
 
+        //[Test]
+        //public void test()
+        //{
+        //    var _mockIndexViewPageModel = new Mock<IIndexPageViewModel>();
+        //    var _mockStationFinder = new Mock<IStationFinder>();
+        //    var _mockStationFinderResultPageModel = new Mock<IStationFinderResultPageViewModel>();
+        //    var _mockJourneyFinder = new Mock<IJourneyfinder>();
+        //    var _mockJourneyDetailsPageViewModel = new Mock<IJourneyDetailsPageViewModel>();
+        //    var _mockPreviousJourneyViewModel = new Mock<IPreviousJourneysViewModel>();
+
+        //    var sut = new HomeController(_mockIndexViewPageModel.Object, _mockStationFinder.Object,
+        //        _mockStationFinderResultPageModel.Object, _mockJourneyFinder.Object,
+        //        _mockJourneyDetailsPageViewModel.Object, _mockPreviousJourneyViewModel.Object);
+
+        //    _mockStationFinder.Setup(x => x.Get(It.IsAny<Station>(), It.IsAny<Station>()));
+
+        //    sut.Index(new IndexPageViewModel());
+
+        //    _mockStationFinder.VerifyAll();
+
+        //}
     }
 
 }

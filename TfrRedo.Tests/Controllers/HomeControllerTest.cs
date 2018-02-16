@@ -68,15 +68,15 @@ namespace TfrRedo.Tests.Controllers
                }
             );
 
-            var indexLandingPageModel = new IndexPageViewModel()
+            var FakeIndexLandingPageModel = new IndexPageViewModel()
             {
                 Arrival = new Station() { Name = "Kings" },
                 Departure = new Station() { Name = "Tott" }
             };
 
+            sut.Index(FakeIndexLandingPageModel);
 
 
-            sut.Index(indexLandingPageModel);
             _mockStationFinder.Verify(x => x.Get(It.IsAny<Station>(), It.IsAny<Station>()),
                 Times.Exactly(1));
 

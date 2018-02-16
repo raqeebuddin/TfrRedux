@@ -47,7 +47,7 @@ namespace TfrRedo.Tests.Controllers
         }
 
         [Test]
-        public void ShoudldRenderStationFinderResultPage()
+        public void ShouldCallStationFinderGetOnce()
         {
             var _mockIndexViewPageModel = new Mock<IIndexPageViewModel>();
             var _mockStationFinder = new Mock<IStationFinder>();
@@ -60,7 +60,14 @@ namespace TfrRedo.Tests.Controllers
                 _mockStationFinderResultPageModel.Object, _mockJourneyFinder.Object,
                 _mockJourneyDetailsPageViewModel.Object, _mockPreviousJourneyViewModel.Object);
 
-            _mockStationFinder.Setup(x => x.Get(It.IsAny<Station>(), It.IsAny<Station>()));
+            _mockStationFinder.Setup(x => x.Get(It.IsAny<Station>(), It.IsAny<Station>())).Returns(
+               new List<StationFinderResponseModel>()
+               {
+                   new StationFinderResponseModel(){Matches = new List<Station>(){new Station(){Name = "Station One"}}},
+                   new StationFinderResponseModel(){Matches = new List<Station>(){new Station(){Name = "Station Two"}}}
+               }
+            );
+
             var indexLandingPageModel = new IndexPageViewModel()
             {
                 Arrival = new Station() { Name = "Kings" },
@@ -68,8 +75,10 @@ namespace TfrRedo.Tests.Controllers
             };
 
 
+
             sut.Index(indexLandingPageModel);
-            _mockStationFinder.VerifyAll();
+            _mockStationFinder.Verify(x => x.Get(It.IsAny<Station>(), It.IsAny<Station>()),
+                Times.Exactly(1));
 
         }
 

@@ -38,7 +38,7 @@ namespace TfrRedo.Controllers
             var stationFinder = _stationFinder.Get(indexPageViewModel.Departure, indexPageViewModel.Arrival);
             _stationFinderResultPageViewModel.DepartureStations = stationFinder[0].Matches;
             _stationFinderResultPageViewModel.ArrivalStations = stationFinder[1].Matches;
-            return View("StationFinderResultPage", _stationFinderResultPageViewModel);
+            return View("StationFinderResultPage" , _stationFinderResultPageViewModel);
         }
 
         [HttpPost]

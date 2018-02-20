@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfrRedo.DataAccess", "TfrRe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfrRedo.WebApi", "TfrRedo.WebApi\TfrRedo.WebApi.csproj", "{6F29F6EF-9FEE-48BD-9258-1476F8F3A780}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfrRedo.DataAccessSql", "TfrRedo.DataAccessSql\TfrRedo.DataAccessSql.csproj", "{68FA5295-55CE-4AFE-953F-E4989C293D7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{6F29F6EF-9FEE-48BD-9258-1476F8F3A780}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F29F6EF-9FEE-48BD-9258-1476F8F3A780}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F29F6EF-9FEE-48BD-9258-1476F8F3A780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68FA5295-55CE-4AFE-953F-E4989C293D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68FA5295-55CE-4AFE-953F-E4989C293D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68FA5295-55CE-4AFE-953F-E4989C293D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68FA5295-55CE-4AFE-953F-E4989C293D7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

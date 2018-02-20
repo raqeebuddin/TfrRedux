@@ -44,7 +44,7 @@ namespace TfrRedo.Controllers
         [HttpPost]
         public ActionResult StationFinderResultPage(StationFinderResultPageViewModel stations)
         {
-            var journeyDetails = _journeyFinder.Get(stations.SelectedDepartureStationIcsId,
+            var journeyDetails  = _journeyFinder.Get(stations.SelectedDepartureStationIcsId,
                 stations.SelectedArrivalStationIcsId);
             _journeyDetailsPageViewModel.Journey = journeyDetails;
             _journeyDetailsPageViewModel.Journey.LegsTrain = journeyDetails.Legs;

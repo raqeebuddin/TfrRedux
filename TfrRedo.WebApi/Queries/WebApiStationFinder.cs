@@ -9,16 +9,15 @@ using TfrRedo.Services.SearchStations.Queries.stationFinder;
 namespace TfrRedo.WebApi.Queries
 {
     public class WebApiStationFinder : IWebApiStationFinder
-    {
-        public async Task<StationFinderResponseModel> StationFinder(Station statiion)
+    {    public async Task<StationFinderResponseModel>StationFinder(Station station)
         {
             try
             {
-                var findStattionApi = string.Format(
-                                $"https://api.tfl.gov.uk/Stoppoint/Search/{statiion.Name}?modes=tube&useMultiModalCall=false");
+                var findStationApi =(
+                                $"https://api.tfl.gov.uk/Stoppoint/Search/{station.Name}?modes=tube&useMultiModalCall=false");
                 using (var client = new WebClient())
                 {
-                    var json = client.DownloadString(findStattionApi);
+                    var json = client.DownloadString(findStationApi);
                     var searchDetails = JsonConvert.DeserializeObject<StationFinderResponseModel>(json);
 
                     return await Task.FromResult(searchDetails);
@@ -32,7 +31,6 @@ namespace TfrRedo.WebApi.Queries
                 emptySearchDeatils.Matches[0].Id = e.ToString();
                 return emptySearchDeatils;
             }
-
         }
     }
 }

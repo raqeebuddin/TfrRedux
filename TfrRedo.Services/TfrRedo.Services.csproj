@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IDatabaseService.cs" />
-    <Compile Include="Interfaces\iWebApiJourneyFinder.cs" />
+    <Compile Include="Interfaces\IWebApiJourneyFinder.cs" />
     <Compile Include="Interfaces\IWebApiStationfinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchStations\Queries\JourneyFinder\IJourneyfinder.cs" />

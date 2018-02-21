@@ -6,8 +6,6 @@ namespace TfrRedo.Services.SearchStations.Queries.stationFinder
 {
     public class StationFinder
         : IStationFinder
-
-
     {
         private readonly IWebApiStationFinder _webApiStationFinder;
 

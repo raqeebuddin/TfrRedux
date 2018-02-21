@@ -70,7 +70,8 @@ namespace TfrRedo
             AreaRegistration.RegisterAllAreas();
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
-            
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
+
         }
     }
 }

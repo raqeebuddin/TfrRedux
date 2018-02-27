@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TfrRedo.DataAccessSql
 {
-    class Class1
+    class Classone
     {
     }
 }

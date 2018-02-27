@@ -2,13 +2,13 @@
 using System.Data;
 using System.Data.SqlClient;
 using Domain.Stations;
-using System.Web.Configuration;
+using System.Configuration;
 
 namespace TfrRedo.DataAccessSql
 {
     public class SqlAdapter
     {
-        string strConnString = ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString;
+        string myConnStr = ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString;
         private string _connectionString =
             @"Data Source = PC-00602\MSSQLSERVER1; Initial Catalog = TfrDatabase; Integrated Security=True"; 
         

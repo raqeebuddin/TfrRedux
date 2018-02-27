@@ -16,7 +16,7 @@ namespace TfrRedo.DataAccessSql
         
         DataTable _dataTable = new DataTable();
 
-        public void Get()
+        public void GetAll()
         {
             using (var sqlConnection = new SqlConnection(_connectionString))
             {
@@ -41,7 +41,7 @@ namespace TfrRedo.DataAccessSql
 
         }
 
-        public void Update()
+        public void GetById()
         {
             var stationDto = new Station(); //temp used for DTO for application itself
             var dataTable = new DataTable();
@@ -54,6 +54,37 @@ namespace TfrRedo.DataAccessSql
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
                 sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@StationId", stationId);
                 sqlDataAdapter.Fill(dataTable);
+            }
+
+            // copy data over from the data table to the DTO to be used by the pplication
+
+            if (dataTable.Rows.Count == 1)
+            {
+                stationDto.Id = Convert.ToString(dataTable.Rows[0][0].ToString());
+                stationDto.Name = dataTable.Rows[0][1].ToString();
+            }
+            else
+            {
+                stationDto.Name = "no Stations available";
+            }
+
+            //YOU CAN RETURN THE STATIONdTO
+        }
+        public void Update()
+        {
+            var stationDto = new Station(); //temp used for DTO for application itself
+            var dataTable = new DataTable();
+            using (var sqlConnection = new SqlConnection(_connectionString))
+            {
+
+                int stationId = 2;
+                string stationName = "Raq";
+
+                string query = "UPDATE Station SET  StationId = @StationId, Name = @StationName";
+                var sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@StationId", stationId);
+                sqlCommand.Parameters.AddWithValue("@Name", stationName);
+                sqlCommand.ExecuteNonQuery();
             }
 
             // copy data over from the data table to the DTO to be used by the pplication

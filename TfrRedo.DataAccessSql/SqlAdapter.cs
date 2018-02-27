@@ -71,9 +71,7 @@ namespace TfrRedo.DataAccessSql
             //YOU CAN RETURN THE STATIONdTO
         }
         public void Update()
-        {
-            var stationDto = new Station(); //temp used for DTO for application itself
-            var dataTable = new DataTable();
+        { 
             using (var sqlConnection = new SqlConnection(_connectionString))
             {
 
@@ -86,25 +84,21 @@ namespace TfrRedo.DataAccessSql
                 sqlCommand.Parameters.AddWithValue("@Name", stationName);
                 sqlCommand.ExecuteNonQuery();
             }
-
-            // copy data over from the data table to the DTO to be used by the pplication
-
-            if (dataTable.Rows.Count == 1)
-            {
-                stationDto.Id = Convert.ToString(dataTable.Rows[0][0].ToString());
-                stationDto.Name = dataTable.Rows[0][1].ToString();
-            }
-            else
-            {
-                stationDto.Name = "no Stations available";
-            }
-
-            //YOU CAN RETURN THE STATIONdTO
         }
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            using (var sqlConnection = new SqlConnection(_connectionString))
+            {
+
+                int stationId = 2;
+                string stationName = "Raq";
+
+                string query = "DELETE FROM Station WHERE StationId = @StationId";
+                var sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@StationId", stationId);
+                sqlCommand.ExecuteNonQuery();
+            }
         }
     }
 }

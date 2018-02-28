@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using TfrRedo.Services.Interfaces;
 using TFR.Data.Models.Journey;
+using TfrRedo.DataAccessSql;
 
 namespace TfrRedo.DataAccess
 {
@@ -13,6 +15,8 @@ namespace TfrRedo.DataAccess
         {
             _tfrContext.Journey.Add(journey);
             _tfrContext.SaveChanges();
+            var sqlService = new SqlAdapter();
+            sqlService.Insert();
         }
 
         public void Delete(Journey journey)

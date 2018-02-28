@@ -1,15 +1,18 @@
-using System.Data.Entity.Migrations;
-
 namespace TfrRedo.DataAccess.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<TfrContext>
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<TfrRedo.DataAccess.TfrContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(TfrContext context)
+        protected override void Seed(TfrRedo.DataAccess.TfrContext context)
         {
             //  This method will be called after migrating to the latest version.
 

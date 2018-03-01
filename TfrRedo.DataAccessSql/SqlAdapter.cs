@@ -6,23 +6,23 @@ using System.Configuration;
 
 namespace TfrRedo.DataAccessSql
 {
-    public class SqlAdapter
+    public class SqlAdapter:ISqlAdapter
     {
-        string myConnStr = ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString;
-        private string _connectionString =
-            @"Data Source = PC-00602\MSSQLSERVER1; Initial Catalog = TfrDatabase; Integrated Security=True"; 
+        private readonly string _connectionString  = ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString;
+        //private string _connectionString =
+        //    @"Data Source = PC-00602\MSSQLSERVER1; Initial Catalog = TfrDatabase; Integrated Security=True"; 
         
         DataTable _dataTable = new DataTable();
 
-        public void GetAll()
+        public DataTable GetAll()
         {
             using (var sqlConnection = new SqlConnection(_connectionString))
             {
                 sqlConnection.Open();
                 var sqlDataAdapter = new SqlDataAdapter("SELECT Name FROM Station ORDER BY Name", sqlConnection);
-
                 sqlDataAdapter.Fill(_dataTable);
             }
+            return _dataTable;
         }
 
         public void Insert()

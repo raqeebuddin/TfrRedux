@@ -22,6 +22,7 @@ namespace TfrRedo.DataAccessSql
                 var sqlDataAdapter = new SqlDataAdapter("SELECT Name FROM Station ORDER BY Name", sqlConnection);
                 sqlDataAdapter.Fill(_dataTable);
             }
+
             return _dataTable;
         }
 

@@ -7,13 +7,13 @@ namespace TfrRedo.DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialMigration : IMigrationMetadata
+    public sealed partial class Initialise : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initialise));
         
         string IMigrationMetadata.Id
         {
-            get { return "201802071621319_InitialMigration"; }
+            get { return "201803011038559_Initialise"; }
         }
         
         string IMigrationMetadata.Source

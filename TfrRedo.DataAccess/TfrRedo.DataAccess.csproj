@@ -48,16 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseService.cs" />
-    <Compile Include="Migrations\201802081428105_initial.cs" />
-    <Compile Include="Migrations\201802081428105_initial.Designer.cs">
-      <DependentUpon>201802081428105_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TfrContext.cs" />
-    <Compile Include="Migrations\201802071621319_InitialMigration.cs" />
-    <Compile Include="Migrations\201802071621319_InitialMigration.Designer.cs">
-      <DependentUpon>201802071621319_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201803011038559_Initialise.cs" />
+    <Compile Include="Migrations\201803011038559_Initialise.Designer.cs">
+      <DependentUpon>201803011038559_Initialise.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="TfrContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,11 +76,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802071621319_InitialMigration.resx">
-      <DependentUpon>201802071621319_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802081428105_initial.resx">
-      <DependentUpon>201802081428105_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803011038559_Initialise.resx">
+      <DependentUpon>201803011038559_Initialise.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

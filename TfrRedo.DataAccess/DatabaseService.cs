@@ -15,9 +15,8 @@ namespace TfrRedo.DataAccess
         {
             _tfrContext.Journey.Add(journey);
             _tfrContext.SaveChanges();
-            var sqlService = new SqlAdapter();
-            var test = sqlService.GetAll();
-            var data = test.Rows[0][0];
+            var sqlAdapter = new SqlAdapter();
+            sqlAdapter.Save(journey);
         }
 
         public void Delete(Journey journey)

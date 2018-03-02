@@ -73,11 +73,10 @@ namespace TfrRedo.DataAccessSql
         {
             using (var sqlConnection = new SqlConnection(_connectionString))
             {
-             
                 sqlConnection.Open();
-                string query = "INSERT INTO Station(Id, StartDateTime, Duration, ArrivalDateTime) VALUES(@Idm @StartDatetime, @Duration, @ArrivalDatetime)";
+                string query = "EXEC  [dbo].[SaveStations] @StartDatetime, @Duration, @ArrivalDatetime";
                 var sqlCommand = new SqlCommand(query, sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@Id", journey.Id);
+    /*            sqlCommand.Parameters.AddWithValue("@Id", journey.Id)*/;
                 sqlCommand.Parameters.AddWithValue("@StartDateTime", journey.StartDateTime);
                 sqlCommand.Parameters.AddWithValue("@Duration", journey.Duration);
                 sqlCommand.Parameters.AddWithValue("@ArrivalDatetime", journey.ArrivalDateTime);

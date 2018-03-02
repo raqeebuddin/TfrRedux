@@ -18,7 +18,6 @@ namespace TfrRedo.DataAccess
             var sqlService = new SqlAdapter();
             var test = sqlService.GetAll();
             var data = test.Rows[0][0];
-
         }
 
         public void Delete(Journey journey)

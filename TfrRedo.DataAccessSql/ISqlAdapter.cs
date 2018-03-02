@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TFR.Data.Models.Journey;
 
 namespace TfrRedo.DataAccessSql
 {
@@ -15,5 +16,8 @@ namespace TfrRedo.DataAccessSql
         void Delete();
         DataTable GetAll();
         void GetById();
+        void Save(Journey journey);
+        void Delete(Journey journey);
+        IEnumerable<Journey> AllJourneys();
     }
 }

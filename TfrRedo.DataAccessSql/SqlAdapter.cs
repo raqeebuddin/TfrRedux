@@ -1,17 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using Domain.Stations;
 using System.Configuration;
+using TFR.Data.Models.Journey;
 
 namespace TfrRedo.DataAccessSql
 {
     public class SqlAdapter:ISqlAdapter
     {
         private readonly string _connectionString  = ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString;
-        //private string _connectionString =
-        //    @"Data Source = PC-00602\MSSQLSERVER1; Initial Catalog = TfrDatabase; Integrated Security=True"; 
-        
         DataTable _dataTable = new DataTable();
 
         public DataTable GetAll()
@@ -69,6 +68,33 @@ namespace TfrRedo.DataAccessSql
 
             //YOU CAN RETURN THE STATIONdTO
         }
+
+        public void Save(Journey journey)
+        {
+            using (var sqlConnection = new SqlConnection(_connectionString))
+            {
+             
+                sqlConnection.Open();
+                string query = "INSERT INTO Station(Id, StartDateTime, Duration, ArrivalDateTime) VALUES(@Idm @StartDatetime, @Duration, @ArrivalDatetime)";
+                var sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@Id", journey.Id);
+                sqlCommand.Parameters.AddWithValue("@StartDateTime", journey.StartDateTime);
+                sqlCommand.Parameters.AddWithValue("@Duration", journey.Duration);
+                sqlCommand.Parameters.AddWithValue("@ArrivalDatetime", journey.ArrivalDateTime);
+                sqlCommand.ExecuteNonQuery();
+            }
+        }
+
+        public void Delete(Journey journey)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Journey> AllJourneys()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update()
         { 
             using (var sqlConnection = new SqlConnection(_connectionString))

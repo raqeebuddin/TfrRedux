@@ -13,7 +13,6 @@ namespace TfrRedo.DataAccessSql
       
         void Insert();
         void Update();
-        void Delete();
         DataTable GetAll();
         void GetById();
         void Save(Journey journey);

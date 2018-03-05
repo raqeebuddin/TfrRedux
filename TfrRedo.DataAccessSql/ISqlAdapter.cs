@@ -10,11 +10,6 @@ namespace TfrRedo.DataAccessSql
 {
     public interface ISqlAdapter
     {
-      
-        void Insert();
-        void Update();
-        DataTable GetAll();
-        void GetById();
         void Save(Journey journey);
         void Delete(Journey journey);
         IEnumerable<Journey> AllJourneys();

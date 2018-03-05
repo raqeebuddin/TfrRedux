@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using TfrRedo.Services.Interfaces;
 using TFR.Data.Models.Journey;
+using TfrRedo.DataAccessSql;
 
 namespace TfrRedo.Services.SearchStations.Queries.JourneyFinder
 {
@@ -27,7 +28,7 @@ namespace TfrRedo.Services.SearchStations.Queries.JourneyFinder
         public IEnumerable<Journey> GetAllJourneys()
         {
             var journeys = _databaseService.AllJourneys();
-            return journeys;
+            return journeys; 
         }
     }
 }

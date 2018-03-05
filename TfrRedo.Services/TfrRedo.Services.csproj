@@ -59,6 +59,10 @@
       <Project>{B66FD1AD-D452-4C9E-A6EA-9FD87FF7C65A}</Project>
       <Name>TfrRedo.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TfrRedo.DataAccessSql\TfrRedo.DataAccessSql.csproj">
+      <Project>{68FA5295-55CE-4AFE-953F-E4989C293D7F}</Project>
+      <Name>TfrRedo.DataAccessSql</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

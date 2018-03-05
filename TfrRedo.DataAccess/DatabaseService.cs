@@ -15,8 +15,6 @@ namespace TfrRedo.DataAccess
         {
             _tfrContext.Journey.Add(journey);
             _tfrContext.SaveChanges();
-            var sqlAdapter = new SqlAdapter();
-            sqlAdapter.Save(journey);
         }
 
         public void Delete(Journey journey)

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseService.cs" />
+    <Compile Include="Interfaces\IDatabaseService.cs" />
     <Compile Include="Migrations\201803011038559_Initialise.cs" />
     <Compile Include="Migrations\201803011038559_Initialise.Designer.cs">
       <DependentUpon>201803011038559_Initialise.cs</DependentUpon>

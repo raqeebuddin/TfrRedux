@@ -32,9 +32,9 @@ namespace TfrRedo.DataAccessSql
         {
             using (var sqlConnection = new SqlConnection(_connectionString))
             {
-                string query = "DELETE FROM Station WHERE StationId = @StationId";
+                string query = "EXEC [dbo].[DeleteJourney] @JourneyId";
                 var sqlCommand = new SqlCommand(query, sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@StationId", journey.Id);
+                sqlCommand.Parameters.AddWithValue("@JourneyId", journey.Id);
                 sqlCommand.ExecuteNonQuery();
             }
         }
@@ -44,7 +44,7 @@ namespace TfrRedo.DataAccessSql
             using (var sqlConnection = new SqlConnection(_connectionString))
             {
                 sqlConnection.Open();
-                var sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Journeys ORDER BY id", sqlConnection);
+                var sqlDataAdapter = new SqlDataAdapter("EXEC [dbo].[AllJourneys]", sqlConnection);
                 sqlDataAdapter.Fill(_dataTable);
             }
 

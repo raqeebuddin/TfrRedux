@@ -10,10 +10,13 @@ using TFR.Data.Models.Journey;
 
 namespace TfrRedo.DataAccessSql
 {
-    public class SqlAdapter:ISqlAdapter
+    public class SqlAdapter : ISqlAdapter
     {
-        private readonly string _connectionString  = ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString;
+        private readonly string _connectionString =
+            ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString;
+
         DataTable _dataTable = new DataTable();
+
         public void Save(Journey journey)
         {
             using (var sqlConnection = new SqlConnection(_connectionString))
@@ -41,25 +44,45 @@ namespace TfrRedo.DataAccessSql
 
         public IEnumerable<Journey> AllJourneys()
         {
-            using (var sqlConnection = new SqlConnection(_connectionString))
+            try
             {
-                sqlConnection.Open();
-                var sqlDataAdapter = new SqlDataAdapter("EXEC [dbo].[AllJourneys]", sqlConnection);
-                sqlDataAdapter.Fill(_dataTable);
-            }
 
-            List<Journey> journeys = _dataTable.AsEnumerable()
-                .Select(row => new Journey()
+                using (var sqlConnection = new SqlConnection(_connectionString))
                 {
-                    Id = row.Field<int?>(0).GetValueOrDefault(),
-                    StartDateTime = row.Field<DateTime?>(1).GetValueOrDefault(),
-                    Duration = row.Field<int?>(2).GetValueOrDefault(),
-                    Legs = new List<Leg>(),
-                    LegsCycle = new List<Leg>(),
-                    LegsTrain = new List<Leg>()
-                }).ToList();
+                    sqlConnection.Open();
+                    var sqlDataAdapter = new SqlDataAdapter("EXEC [dbo].[AllJourneys]", sqlConnection);
+                    sqlDataAdapter.Fill(_dataTable);
+                }
 
-            return journeys;
+                List<Journey> journeys = _dataTable.AsEnumerable()
+                    .Select(row => new Journey()
+                    {
+                        Id = row.Field<int?>(0).GetValueOrDefault(),
+                        StartDateTime = row.Field<DateTime?>(1).GetValueOrDefault(),
+                        Duration = row.Field<int?>(2).GetValueOrDefault(),
+                        Legs = new List<Leg>(),
+                        LegsCycle = new List<Leg>(),
+                        LegsTrain = new List<Leg>()
+                    }).ToList();
+
+                return journeys;
+            }
+            catch (Exception e)
+            {
+                return new List<Journey>()
+                {
+                    new Journey()
+                    {
+                        Id = 0,
+                        StartDateTime = DateTime.Now,
+                        Duration = 0,
+                        ArrivalDateTime = DateTime.Now,
+                        Legs = new List<Leg>(),
+                        LegsCycle = new List<Leg>(),
+                        LegsTrain = new List<Leg>()
+                    }
+                };
+            }
         }
     }
 }

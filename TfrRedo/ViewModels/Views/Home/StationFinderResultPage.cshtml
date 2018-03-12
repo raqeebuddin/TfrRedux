@@ -1,0 +1,45 @@
+﻿@model TfrRedo.ViewModels.StationFinderResultPageViewModel
+
+@{
+    /**/
+
+    ViewBag.Title = "StationFinderResultPage";
+}
+
+<h2>StationFinderResultPage</h2>
+
+@using (Html.BeginForm("StationFinderResultPage", "Home"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>StationFinderView</h4>
+        <hr/>
+
+        <div class="form-group">
+            <div class="col-md-8">
+                @Html.DropDownListFor(m => m.SelectedArrivalStationIcsId, Model.DepartureStationItems, new {htmlAttributes = new {@class = "form-control", placeholder = "Select Departure Station"}})
+                @Html.ValidationMessageFor(m => m.SelectedArrivalStationIcsId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-8">
+                @Html.DropDownListFor(m => m.SelectedDepartureStationIcsId, Model.ArrivalStationItems, new {htmlAttributes = new {@class = "form-control", placeholder = "Select Arrival Station"}})
+                @Html.ValidationMessageFor(m => m.SelectedDepartureStationIcsId)
+            </div>
+        </div>
+
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default"/>
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,35 @@
+﻿@model TfrRedo.ViewModels.JourneyDetailsPageViewModel
+
+@{
+    ViewBag.Title = "JourneyPlanner";
+}
+
+<h2>JourneyPlanner</h2>
+
+<div>
+    <h4>JourneyDetailsPageViewModel</h4>
+    <hr/>
+    <dl class="dl-horizontal"></dl>
+</div>
+
+<div>
+    <p>Arrival Time: </p>@Model.Journey.ArrivalDateTime
+</div>
+<div>
+    <p>Journey Duration</p>@Model.Journey.Duration
+</div>
+<div>
+    <p>Distance to Travel (km)</p>@Model.Journey.LegsTrain[0].Distance
+</div>
+<div>
+    <p>Travel Instructions</p>
+    @Model.Journey.LegsTrain[0].Instruction.Summary
+</div>
+
+<div>
+    @Html.ActionLink("Back to Search", "Index")
+
+</div>
+<div>
+    @Html.ActionLink("Previous Journeys", "PreviousJourneys")
+</div>

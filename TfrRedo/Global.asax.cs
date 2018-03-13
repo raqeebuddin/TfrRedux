@@ -71,7 +71,7 @@ namespace TfrRedo
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
+            log4net.Config.XmlConfigurator.Configure();
         }
     }
 }

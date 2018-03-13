@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseService.cs" />
-    <Compile Include="Interfaces\IDatabaseService.cs" />
     <Compile Include="Migrations\201803011038559_Initialise.cs" />
     <Compile Include="Migrations\201803011038559_Initialise.Designer.cs">
       <DependentUpon>201803011038559_Initialise.cs</DependentUpon>
@@ -80,6 +79,9 @@
     <EmbeddedResource Include="Migrations\201803011038559_Initialise.resx">
       <DependentUpon>201803011038559_Initialise.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

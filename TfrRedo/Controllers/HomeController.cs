@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using log4net;
+using System.Web.Mvc;
 using TfrRedo.Services.SearchStations.Queries.JourneyFinder;
 using TfrRedo.Services.SearchStations.Queries.stationFinder;
 using TfrRedo.ViewModels;
@@ -29,6 +30,14 @@ namespace TfrRedo.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ILog log = log4net.LogManager.GetLogger(typeof(HomeController));
+            
+                log.Debug("Debug message");
+                log.Warn("Warn message");
+                log.Error("Error message");
+                log.Fatal("Fatal message");
+                ViewBag.Title = "Home Page";
+         
             return View(_indexPageViewModel);
         }
 

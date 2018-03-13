@@ -7,6 +7,7 @@ namespace TfrRedo.Services.Interfaces
     {
         void Save(Journey journey);
         void Delete(Journey journey);
+
         IEnumerable<Journey> AllJourneys();
     }
 }

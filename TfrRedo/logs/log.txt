@@ -1,0 +1,4 @@
+DEBUG 2018-03-13 15:46:22,712   375ms HomeController         Index              - Debug message
+WARN  2018-03-13 15:46:22,736   399ms HomeController         Index              - Warn message
+ERROR 2018-03-13 15:46:22,736   399ms HomeController         Index              - Error message
+FATAL 2018-03-13 15:46:22,737   399ms HomeController         Index              - Fatal message

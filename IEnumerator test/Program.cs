@@ -28,15 +28,30 @@ namespace IEnumerator_test
                 "url1", "url2", "url3", "url4"
             };
 
-            IEnumerable<Product>result  = from n in name
-                                          from p in price
-                                          from u in url
-                                          select new Product()
-                                          {
-                                              Name = n,
-                                              Price = p,
-                                              Url = u
-                                          };
+            IEnumerable<Product> result =
+                from n in name.Select( n => n)
+            
+                from p in price
+                from i in url
+                select new Product()
+                {
+                    Name = n,
+                    Price = p,
+                    Url = i
+                };
+
+
+            //var teenAgerStudents = from s in studentList
+            //    where s.age > 12 && s.age < 20
+            //    select s
+            //    into teenStudents
+            //    where teenStudents.StudentName.StartsWith("B")
+            //    select teenStudents;
+
+            //var studentNames = studentList.Where(s => s.Age > 18)
+            //    .Select(s => s)
+            //    .Where(st => st.StandardID > 0)
+            //    .Select(s => s.StudentName);
 
             products = result.ToList();
             // Loop.

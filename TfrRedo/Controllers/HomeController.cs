@@ -14,6 +14,7 @@ namespace TfrRedo.Controllers
         private readonly IStationFinder _stationFinder;
         private readonly IStationFinderResultPageViewModel _stationFinderResultPageViewModel;
         private readonly IPreviousJourneysViewModel _previousJourneys;
+        ILog log = log4net.LogManager.GetLogger(typeof(HomeController));
 
         public HomeController(IIndexPageViewModel indexPageViewModel, IStationFinder stationFinder,
             IStationFinderResultPageViewModel stationFinderResultPageViewModel, IJourneyfinder journeyFinder,
@@ -30,14 +31,10 @@ namespace TfrRedo.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            ILog log = log4net.LogManager.GetLogger(typeof(HomeController));
-            
-                log.Debug("Debug message");
-                log.Warn("Warn message");
-                log.Error("Error message");
-                log.Fatal("Fatal message");
-                ViewBag.Title = "Home Page";
-         
+                //log.Debug("Debug !message");
+                //log.Warn("Warn mes!sage");
+                //log.Error("Error me!ssage");
+                //log.Fatal("Fatal mes!sage");
             return View(_indexPageViewModel);
         }
 

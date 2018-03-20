@@ -2,3 +2,7 @@ DEBUG 2018-03-13 15:46:22,712   375ms HomeController         Index              
 WARN  2018-03-13 15:46:22,736   399ms HomeController         Index              - Warn message
 ERROR 2018-03-13 15:46:22,736   399ms HomeController         Index              - Error message
 FATAL 2018-03-13 15:46:22,737   399ms HomeController         Index              - Fatal message
+DEBUG 2018-03-20 11:56:34,446   288ms HomeController         Index              - Debug !message
+WARN  2018-03-20 11:56:34,476   318ms HomeController         Index              - Warn mes!sage
+ERROR 2018-03-20 11:56:34,476   318ms HomeController         Index              - Error me!ssage
+FATAL 2018-03-20 11:56:34,476   318ms HomeController         Index              - Fatal mes!sage

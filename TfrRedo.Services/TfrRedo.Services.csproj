@@ -50,9 +50,9 @@
     <Compile Include="SearchStations\Queries\JourneyFinder\IJourneyfinder.cs" />
     <Compile Include="SearchStations\Queries\JourneyFinder\JourneyFinder.cs" />
     <Compile Include="SearchStations\Queries\JourneyFinder\JourneyFinderResponseModel.cs" />
-    <Compile Include="SearchStations\Queries\SattionFinder\StationFinder.cs" />
-    <Compile Include="SearchStations\Queries\SattionFinder\IStationFinder.cs" />
-    <Compile Include="SearchStations\Queries\SattionFinder\StationFinderResponseModel.cs" />
+    <Compile Include="SearchStations\Queries\SationFinder\StationFinder.cs" />
+    <Compile Include="SearchStations\Queries\SationFinder\IStationFinder.cs" />
+    <Compile Include="SearchStations\Queries\SationFinder\StationFinderResponseModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\TfrRedo.Domain.csproj">

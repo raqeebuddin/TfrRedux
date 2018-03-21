@@ -6,3 +6,16 @@ DEBUG 2018-03-20 11:56:34,446   288ms HomeController         Index              
 WARN  2018-03-20 11:56:34,476   318ms HomeController         Index              - Warn mes!sage
 ERROR 2018-03-20 11:56:34,476   318ms HomeController         Index              - Error me!ssage
 FATAL 2018-03-20 11:56:34,476   318ms HomeController         Index              - Fatal mes!sage
+DEBUG 2018-03-21 14:49:42,405   320ms HomeController         Index              - Debug new logger
+WARN  2018-03-21 14:49:42,418   333ms HomeController         Index              - Warn mes!sage
+ERROR 2018-03-21 14:49:42,419   334ms HomeController         Index              - Error me!ssage
+FATAL 2018-03-21 14:49:42,419   334ms HomeController         Index              - Fatal mes!sage
+DEBUG 2018-03-21 14:54:01,549   323ms HomeController         Index              - Debug new logger
+WARN  2018-03-21 14:54:01,563   337ms HomeController         Index              -  test Warn mes!sage
+ERROR 2018-03-21 14:54:01,563   337ms HomeController         Index              - Error me!ssage
+FATAL 2018-03-21 14:54:01,563   337ms HomeController         Index              - Fatal mes!sage
+DEBUG 2018-03-21 15:02:57,360   377ms HomeController         Index              - Debug new logger
+ TfrRedo.Controllers.HomeControllerWARN  2018-03-21 15:02:57,375   392ms HomeController         Index              -  test Warn mes!sage
+ TfrRedo.Controllers.HomeControllerERROR 2018-03-21 15:02:57,376   393ms HomeController         Index              - Error me!ssage
+ TfrRedo.Controllers.HomeControllerFATAL 2018-03-21 15:02:57,376   393ms HomeController         Index              - Fatal mes!sage
+ TfrRedo.Controllers.HomeController

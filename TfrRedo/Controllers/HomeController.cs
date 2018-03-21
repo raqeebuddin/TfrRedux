@@ -31,10 +31,10 @@ namespace TfrRedo.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-                //log.Debug("Debug !message");
-                //log.Warn("Warn mes!sage");
-                //log.Error("Error me!ssage");
-                //log.Fatal("Fatal mes!sage");
+            log.Debug("Debug new logger");
+            log.Warn(" test Warn mes!sage");
+            log.Error("Error me!ssage");
+            log.Fatal("Fatal mes!sage");
             return View(_indexPageViewModel);
         }
 

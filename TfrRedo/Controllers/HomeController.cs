@@ -31,10 +31,6 @@ namespace TfrRedo.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            log.Debug("SQL and text");
-            log.Warn(" SQL and text");
-            log.Error("Error me!ssage");
-            log.Fatal("Fatal mes!sage");
             return View(_indexPageViewModel);
         }
 

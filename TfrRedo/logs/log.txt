@@ -18,4 +18,8 @@ DEBUG 2018-03-21 15:02:57,360   377ms HomeController         Index              
  TfrRedo.Controllers.HomeControllerWARN  2018-03-21 15:02:57,375   392ms HomeController         Index              -  test Warn mes!sage
  TfrRedo.Controllers.HomeControllerERROR 2018-03-21 15:02:57,376   393ms HomeController         Index              - Error me!ssage
  TfrRedo.Controllers.HomeControllerFATAL 2018-03-21 15:02:57,376   393ms HomeController         Index              - Fatal mes!sage
+ TfrRedo.Controllers.HomeControllerDEBUG 2018-03-21 16:59:40,186   372ms HomeController         Index              - SQL and text
+ TfrRedo.Controllers.HomeControllerWARN  2018-03-21 16:59:40,250   436ms HomeController         Index              -  SQL and text
+ TfrRedo.Controllers.HomeControllerERROR 2018-03-21 16:59:40,258   444ms HomeController         Index              - Error me!ssage
+ TfrRedo.Controllers.HomeControllerFATAL 2018-03-21 16:59:40,267   453ms HomeController         Index              - Fatal mes!sage
  TfrRedo.Controllers.HomeController

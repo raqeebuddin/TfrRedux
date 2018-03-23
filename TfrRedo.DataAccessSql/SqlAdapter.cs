@@ -19,16 +19,17 @@ namespace TfrRedo.DataAccessSql
 
         public void Save(Journey journey)
         {
-            using (var sqlConnection = new SqlConnection(_connectionString))
-            {
-                sqlConnection.Open();
-                string query = "EXEC  [dbo].[SaveStations] @StartDatetime, @Duration, @ArrivalDatetime";
-                var sqlCommand = new SqlCommand(query, sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@StartDateTime", journey.StartDateTime);
-                sqlCommand.Parameters.AddWithValue("@Duration", journey.Duration);
-                sqlCommand.Parameters.AddWithValue("@ArrivalDatetime", journey.ArrivalDateTime);
-                sqlCommand.ExecuteNonQuery();
-            }
+          
+                using (var sqlConnection = new SqlConnection(_connectionString))
+                {
+                    sqlConnection.Open();
+                    string query = "EXEC  [dbo].[SaveStations] @StartDatetime, @Duration, @ArrivalDatetime";
+                    var sqlCommand = new SqlCommand(query, sqlConnection);
+                    sqlCommand.Parameters.AddWithValue("@StartDateTime", journey.StartDateTime);
+                    sqlCommand.Parameters.AddWithValue("@Duration", journey.Duration);
+                    sqlCommand.Parameters.AddWithValue("@ArrivalDatetime", journey.ArrivalDateTime);
+                    sqlCommand.ExecuteNonQuery();
+                }
         }
 
         public void Delete(Journey journey)

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using TfrRedo.Services.Interfaces;
@@ -13,8 +14,17 @@ namespace TfrRedo.DataAccess
 
         public void Save(Journey journey)
         {
-            _tfrContext.Journey.Add(journey);
-            _tfrContext.SaveChanges();
+            try
+            {
+                _tfrContext.Journey.Add(journey);
+                _tfrContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+           
         }
 
         public void Delete(Journey journey)

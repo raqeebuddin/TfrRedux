@@ -33,12 +33,12 @@ namespace TfrRedo.WebApi.Queries
             }
             catch (Exception e)
             {
-                log.Error("Error from WebApJourneryFinder.JourneyFinderAsync failed to Journey details from TFL API");
+                log.Error("Error from WebApJourneryFinder.JourneyFinderAsync failed to Journey details from TFL API returning empty object ID = 404");
                 var emptySearchDeatils = new JourneyFinderResponseModel();
 
                 emptySearchDeatils.Journeys.Add(new Journey()
                 {
-                    Id = 00000,
+                    Id = 404,
                     StartDateTime = DateTime.Now,
                     Duration = 0,
                     ArrivalDateTime = DateTime.Now

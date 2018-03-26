@@ -26,7 +26,7 @@ namespace TfrRedo.Services.SearchStations.Queries.stationFinder
             var arrivalStationDetails = arrivalStationDetailsAsync.Result;
             departureArrivalStationList.Add(departureStationDetails);
             departureArrivalStationList.Add(arrivalStationDetails);
-
+            
             return departureArrivalStationList;
         }
     }

@@ -25,8 +25,6 @@ namespace TfrRedo.DataAccess
             catch (Exception e)
             {
                 log.Fatal($"Error in saving journey to data base. Exception = {e}");
-                Console.WriteLine(e);
-                throw;
             }
 
         }

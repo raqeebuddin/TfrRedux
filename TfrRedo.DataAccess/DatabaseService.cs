@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Linq.Expressions;
 using log4net;
 using TfrRedo.Services.Interfaces;
 using TFR.Data.Models.Journey;
@@ -27,20 +28,39 @@ namespace TfrRedo.DataAccess
                 Console.WriteLine(e);
                 throw;
             }
-           
+
         }
 
         public void Delete(Journey journey)
         {
-            _tfrContext.Journey.Remove(journey);
-            _tfrContext.SaveChanges();
+            try
+
+            {
+                _tfrContext.Journey.Remove(journey);
+                _tfrContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                log.Error($"Cannot initiate Delete from data base. Error message: {e}");
+            }
         }
 
         public IEnumerable<Journey> AllJourneys()
         {
-            var journeys = _tfrContext.Journey.ToList();
+            try
+            {
+                var journeys = _tfrContext.Journey.ToList();
+                return journeys;
+            }
+            catch (Exception e)
+            {
+                log.Fatal($"Cannont retrrieve AllJourneys from Database. Error: {e}");
+                return new List<Journey>()
+                {
+                    new Journey(){Id = 404, Duration = 0, StartDateTime = DateTime.Now, ArrivalDateTime = DateTime.Now }
+                };
+            }
 
-            return journeys;
         }
     }
 }

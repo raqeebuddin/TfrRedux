@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using log4net;
 using TfrRedo.Services.Interfaces;
 using TFR.Data.Models.Journey;
 using TfrRedo.DataAccessSql;
@@ -10,6 +11,7 @@ namespace TfrRedo.DataAccess
 {
     public class DatabaseService : IDatabaseService
     {
+        ILog log = log4net.LogManager.GetLogger(typeof(DatabaseService));
         private readonly TfrContext _tfrContext = new TfrContext();
 
         public void Save(Journey journey)
@@ -21,6 +23,7 @@ namespace TfrRedo.DataAccess
             }
             catch (Exception e)
             {
+                log.Fatal($"Error in saving journey to data base. Exception = {e}");
                 Console.WriteLine(e);
                 throw;
             }

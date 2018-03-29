@@ -1,5 +1,7 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Net;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -43,6 +45,9 @@ namespace TfrRedo.WebApi.Queries
                     Duration = 0,
                     ArrivalDateTime = DateTime.Now
                 });
+
+                var tes = new SqlConnection();
+                tes.Dispose();
                 return emptySearchDeatils;
             }
         }
